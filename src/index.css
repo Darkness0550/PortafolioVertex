@@ -1,20 +1,20 @@
 :root {
-  --abyss: #07152A; /* Darkened version of #0c2448 for contrast */
-  --panel: #0C2448;
+  --abyss: #03040A;
+  --panel: #080C12;
   --vertex-accent: #0397A3;
   --vertex-secondary: #4A5E65;
-  --border-glow: #4A5E65;
+  --border-glow: #1A2A30;
   --text-primary: #F2F5FF;
   --text-secondary: #A0B2B8;
-  --fog: rgba(3, 151, 163, 0.04);
+  --fog: rgba(3, 151, 163, 0.03);
   
   --font-display: 'Chakra Petch', sans-serif;
   --font-body: 'DM Sans', sans-serif;
   --font-code: 'Space Mono', monospace;
 
-  --glow-accent-subtle: 0 0 24px rgba(3, 151, 163, 0.15);
-  --glow-accent-active: 0 0 40px rgba(3, 151, 163, 0.3);
-  --glow-secondary: 0 0 60px rgba(74, 94, 101, 0.20);
+  --glow-accent-subtle: 0 0 24px rgba(3, 151, 163, 0.12);
+  --glow-accent-active: 0 0 40px rgba(3, 151, 163, 0.28);
+  --glow-secondary: 0 0 60px rgba(74, 94, 101, 0.18);
 }
 
 * {

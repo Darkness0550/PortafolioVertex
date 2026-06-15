@@ -28,7 +28,7 @@
   left: 0;
   width: 150vw;
   height: 1px;
-  background-color: #0C2448;
+  background-color: #080C12;
   pointer-events: none;
   transition: background-color 0.3s;
 }
