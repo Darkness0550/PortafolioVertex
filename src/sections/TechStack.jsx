@@ -11,14 +11,17 @@ export default function TechStack() {
   const [hoveredTech, setHoveredTech] = useState(null);
   const sphereRef = useRef(null);
   const [lines, setLines] = useState([]);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const check = () => setIsMobile(window.innerWidth <= 768);
+    check();
+    window.addEventListener('resize', check);
+    return () => window.removeEventListener('resize', check);
+  }, []);
   
   useEffect(() => {
-    if (!hoveredTech || !sphereRef.current) {
-      setLines([]);
-      return;
-    }
-    
-    if (window.innerWidth <= 768) return; // Don't draw lines on mobile
+    if (!hoveredTech || !sphereRef.current || isMobile) { setLines([]); return; }
     
     const section = document.getElementById('stack');
     if (!section) return;
@@ -33,17 +36,16 @@ export default function TechStack() {
       const elRect = el.getBoundingClientRect();
       const elX = elRect.left - sectionRect.left;
       const elY = elRect.top - sectionRect.top + elRect.height / 2;
-      
       setLines([{ x1: elX, y1: elY, x2: sphereCenterX + 50, y2: sphereCenterY }]);
     }
-  }, [hoveredTech]);
+  }, [hoveredTech, isMobile]);
 
   return (
-    <section id="stack" className="section-reveal" style={{ minHeight: '100vh', position: 'relative', display: 'flex', flexWrap: 'wrap', overflow: 'hidden' }}>
+    <section id="stack" className="section-reveal techstack-section" style={{ minHeight: '100vh', position: 'relative', display: 'flex', flexWrap: 'wrap', overflow: 'hidden' }}>
       
-      <div style={{ position: 'absolute', top: '50%', left: '25%', transform: 'translate(-50%, -50%)', width: '600px', height: '600px', background: 'radial-gradient(circle, rgba(0,212,232,0.15) 0%, transparent 70%)', zIndex: 1 }}></div>
+      <div style={{ position: 'absolute', top: '50%', left: '25%', transform: 'translate(-50%, -50%)', width: '600px', height: '600px', background: 'radial-gradient(circle, rgba(3,151,163,0.1) 0%, transparent 70%)', zIndex: 1, pointerEvents: 'none' }}></div>
 
-      <div style={{ flex: '1 1 40%', minWidth: '300px', position: 'relative', zIndex: 5, display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'hidden' }}>
+      <div className="techstack-sphere" style={{ flex: '1 1 40%', minWidth: '300px', position: 'relative', zIndex: 5, display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'hidden' }}>
         <img 
           ref={sphereRef}
           src="/assets/sphere_render.png" 
@@ -55,13 +57,12 @@ export default function TechStack() {
             transition: 'transform 2s ease-out',
             marginLeft: '-20%',
             mixBlendMode: 'screen',
-            opacity: window.innerWidth <= 768 ? 0.3 : 1
           }} 
         />
       </div>
 
-      <div style={{ flex: '1 1 60%', minWidth: '300px', zIndex: 10, display: 'flex', flexDirection: 'column', justifyContent: 'center', padding: '0 5%', paddingTop: window.innerWidth <= 768 ? '40px' : '0' }}>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(140px, 1fr))', gap: '40px' }}>
+      <div className="techstack-grid" style={{ flex: '1 1 60%', minWidth: '300px', zIndex: 10, display: 'flex', flexDirection: 'column', justifyContent: 'center', padding: '80px 5%' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(130px, 1fr))', gap: '40px' }}>
           {techGroups.map((group, idx) => (
             <div key={idx}>
               <div className="font-code text-primary" style={{ fontSize: '13px', marginBottom: '16px', borderBottom: '1px solid var(--border-glow)', paddingBottom: '8px' }}>
@@ -73,8 +74,8 @@ export default function TechStack() {
                     key={tech} 
                     id={`tech-${tech.replace(/\s+/g, '-')}`}
                     className="font-body interactive"
-                    onMouseEnter={() => setHoveredTech(tech.replace(/\s+/g, '-'))}
-                    onMouseLeave={() => setHoveredTech(null)}
+                    onMouseEnter={() => !isMobile && setHoveredTech(tech.replace(/\s+/g, '-'))}
+                    onMouseLeave={() => !isMobile && setHoveredTech(null)}
                     style={{ 
                       fontSize: '14px', 
                       color: hoveredTech === tech.replace(/\s+/g, '-') ? 'var(--text-primary)' : 'var(--text-secondary)',
@@ -91,19 +92,21 @@ export default function TechStack() {
         </div>
       </div>
 
-      <svg style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', pointerEvents: 'none', zIndex: 8 }}>
-        {lines.map((line, i) => (
-          <g key={i}>
-            <line 
-              x1={line.x1} y1={line.y1} x2={line.x2} y2={line.y2} 
-              stroke="var(--vertex-accent)" 
-              strokeWidth="1" 
-              opacity="0.4" 
-            />
-            <circle cx={line.x2} cy={line.y2} r="3" fill="var(--vertex-accent)" />
-          </g>
-        ))}
-      </svg>
+      {!isMobile && (
+        <svg style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', pointerEvents: 'none', zIndex: 8 }}>
+          {lines.map((line, i) => (
+            <g key={i}>
+              <line 
+                x1={line.x1} y1={line.y1} x2={line.x2} y2={line.y2} 
+                stroke="var(--vertex-accent)" 
+                strokeWidth="1" 
+                opacity="0.4" 
+              />
+              <circle cx={line.x2} cy={line.y2} r="3" fill="var(--vertex-accent)" />
+            </g>
+          ))}
+        </svg>
+      )}
     </section>
   );
 }
