@@ -9,7 +9,7 @@ export default function Testimonial() {
             top: '-60px', 
             left: '-40px', 
             fontSize: '120px', 
-            color: 'var(--vertex-cyan)', 
+            color: 'var(--vertex-red)', 
             opacity: 0.15, 
             fontFamily: 'serif',
             lineHeight: 1
@@ -38,11 +38,11 @@ export default function Testimonial() {
               backgroundColor: 'var(--abyss)',
               transition: 'box-shadow 0.2s, border-color 0.2s'
             }}
-            onMouseEnter={(e) => { e.currentTarget.style.boxShadow = 'var(--glow-cyan-subtle)'; e.currentTarget.style.borderColor = 'var(--vertex-cyan)'; }}
+            onMouseEnter={(e) => { e.currentTarget.style.boxShadow = 'var(--glow-red-subtle)'; e.currentTarget.style.borderColor = 'var(--vertex-red)'; }}
             onMouseLeave={(e) => { e.currentTarget.style.boxShadow = 'none'; e.currentTarget.style.borderColor = 'var(--border-glow)'; }}
             >
               <div className="font-code text-secondary" style={{ fontSize: '11px', marginBottom: '8px' }}>{m.label}</div>
-              <div className="font-display text-cyan" style={{ fontSize: '24px' }}>{m.val}</div>
+              <div className="font-display text-red" style={{ fontSize: '24px' }}>{m.val}</div>
             </div>
           ))}
         </div>

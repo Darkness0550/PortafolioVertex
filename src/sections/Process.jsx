@@ -11,14 +11,6 @@ const steps = [
 export default function Process() {
   const [progress, setProgress] = useState(0);
   const sectionRef = useRef(null);
-  const [isMobile, setIsMobile] = useState(false);
-
-  useEffect(() => {
-    const handleResize = () => setIsMobile(window.innerWidth <= 768);
-    handleResize();
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -40,35 +32,47 @@ export default function Process() {
 
   return (
     <section ref={sectionRef} className="section-reveal process-section" style={{ padding: '160px 24px', position: 'relative' }}>
-      <div className="container">
+      <div className="container" style={{ maxWidth: '800px' }}>
         
-        <div style={{ position: 'relative', padding: '40px 0' }}>
-          {!isMobile && (
-            <>
-              <div style={{ position: 'absolute', top: '90px', left: 0, width: '100%', height: '1px', backgroundColor: '#272A30' }}></div>
-              <div style={{ position: 'absolute', top: '90px', left: 0, width: `${progress}%`, height: '1px', backgroundColor: 'var(--vertex-cyan)', transition: 'width 0.1s' }}></div>
-            </>
-          )}
+        <h2 className="font-display text-primary" style={{ fontSize: '40px', marginBottom: '80px', textAlign: 'center' }}>Proceso</h2>
+
+        <div style={{ position: 'relative', padding: '40px 0', paddingLeft: '40px' }}>
           
-          <div style={{ display: 'flex', flexDirection: isMobile ? 'column' : 'row', justifyContent: 'space-between', position: 'relative', zIndex: 2, gap: isMobile ? '48px' : '0' }}>
+          <div style={{ position: 'absolute', top: 0, left: '11px', width: '2px', height: '100%', backgroundColor: '#272A30' }}></div>
+          <div style={{ position: 'absolute', top: 0, left: '11px', width: '2px', height: `${progress}%`, backgroundColor: 'var(--vertex-red)', transition: 'height 0.1s' }}></div>
+          
+          <div style={{ display: 'flex', flexDirection: 'column', position: 'relative', zIndex: 2, gap: '64px' }}>
             {steps.map((step) => (
-              <div key={step.id} className="interactive process-step" style={{ flex: '1', paddingRight: isMobile ? '0' : '20px' }}>
-                <div style={{ height: '40px', marginBottom: '16px', display: 'flex', alignItems: 'flex-end' }}>
-                  <svg width="24" height="24" viewBox="0 0 24 24" className="process-geo" style={{ fill: 'none', stroke: 'var(--text-secondary)', strokeWidth: '1px' }}>
-                    <polygon points="12,2 22,20 2,20" />
-                  </svg>
-                </div>
+              <div key={step.id} className="interactive process-step panel" style={{ 
+                position: 'relative', 
+                padding: '32px',
+                borderRadius: '12px',
+                boxShadow: 'var(--glow-red-subtle)',
+                transition: 'border-color 0.3s, box-shadow 0.3s'
+              }}>
+                <div style={{ 
+                  position: 'absolute', 
+                  top: '40px', 
+                  left: '-37px', 
+                  width: '16px', 
+                  height: '16px', 
+                  backgroundColor: 'var(--abyss)', 
+                  border: '3px solid var(--vertex-red)',
+                  borderRadius: '50%',
+                  zIndex: 10,
+                  boxShadow: '0 0 10px var(--vertex-red)'
+                }}></div>
                 
-                <div className="font-code text-cyan process-label" style={{ fontSize: '13px', marginBottom: '16px', background: 'var(--abyss)', display: 'inline-block', paddingRight: '12px' }}>
+                <div className="font-code text-red process-label" style={{ fontSize: '13px', marginBottom: '16px', display: 'inline-block' }}>
                   [ {step.id} ] {step.title}
                 </div>
                 
-                <p className="font-body text-secondary" style={{ fontSize: '14px', lineHeight: '1.5', marginBottom: '24px', maxWidth: '220px' }}>
+                <p className="font-body text-secondary" style={{ fontSize: '15px', lineHeight: '1.6', marginBottom: '16px' }}>
                   {step.desc}
                 </p>
                 
-                <div className="font-code text-primary" style={{ fontSize: '11px' }}>
-                  {step.time}
+                <div className="font-code text-primary" style={{ fontSize: '12px', opacity: 0.8 }}>
+                  ⏱ {step.time}
                 </div>
               </div>
             ))}

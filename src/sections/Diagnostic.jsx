@@ -66,7 +66,7 @@ export default function Diagnostic() {
                   borderRadius: '12px',
                   opacity: selected ? (selected === opt.id ? 1 : 0.2) : 1,
                   transition: 'opacity 0.3s',
-                  border: selected === opt.id ? '1px solid var(--vertex-cyan)' : '1px solid var(--border-glow)'
+                  border: selected === opt.id ? '1px solid var(--vertex-red)' : '1px solid var(--border-glow)'
                 }}
               >
                 <span style={{ fontSize: '40px' }}>{opt.icon}</span>
@@ -77,7 +77,7 @@ export default function Diagnostic() {
         ) : (
           <select 
             className="font-code text-primary panel" 
-            style={{ width: '100%', padding: '16px', marginBottom: '40px', borderRadius: '8px', border: '1px solid var(--vertex-cyan)' }}
+            style={{ width: '100%', padding: '16px', marginBottom: '40px', borderRadius: '8px', border: '1px solid var(--vertex-red)' }}
             onChange={(e) => setSelected(e.target.value)}
             defaultValue=""
           >
@@ -87,23 +87,29 @@ export default function Diagnostic() {
         )}
 
         {selected && (
-          <div style={{ 
-            borderLeft: '3px solid var(--vertex-cyan)', 
-            paddingLeft: '24px',
-            minHeight: '150px'
-          }}>
-            <pre className="font-code text-secondary" style={{ 
-              fontSize: '13px', 
-              whiteSpace: 'pre-wrap', 
-              lineHeight: '1.6',
-              marginBottom: '24px'
-            }}>
-              {typedText}
-            </pre>
+          <div style={{ position: 'relative', marginTop: '24px' }}>
+            <div style={{ position: 'absolute', top: '10px', left: '-10px', width: '100%', height: '100%', border: '1px solid rgba(255, 42, 42, 0.4)', zIndex: 0 }}></div>
             
-            <a href="#contacto" className="interactive font-code text-cyan" style={{ fontSize: '13px', borderBottom: '1px solid var(--vertex-cyan)', paddingBottom: '2px' }}>
-              [Hablar sobre tu proyecto similar →]
-            </a>
+            <div className="panel" style={{ 
+              position: 'relative',
+              zIndex: 1,
+              padding: '32px',
+              minHeight: '150px',
+              border: '1px solid var(--border-glow)'
+            }}>
+              <pre className="font-code text-secondary" style={{ 
+                fontSize: '13px', 
+                whiteSpace: 'pre-wrap', 
+                lineHeight: '1.6',
+                marginBottom: '24px'
+              }}>
+                {typedText}
+              </pre>
+              
+              <a href="#contacto" className="interactive font-code text-red" style={{ fontSize: '13px', borderBottom: '1px solid var(--vertex-red)', paddingBottom: '2px' }}>
+                [Hablar sobre tu proyecto similar →]
+              </a>
+            </div>
           </div>
         )}
       </div>

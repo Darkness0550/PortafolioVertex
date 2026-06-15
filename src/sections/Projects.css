@@ -34,7 +34,7 @@
   border: 1px solid var(--border-glow);
   border-radius: 12px;
   padding: 32px;
-  box-shadow: var(--glow-cyan-subtle);
+  box-shadow: var(--glow-red-subtle);
   display: flex;
   flex-direction: column;
   transition: border-color 200ms ease-out, box-shadow 200ms ease-out;
@@ -42,14 +42,14 @@
 }
 
 .project-card:hover {
-  border-color: var(--vertex-cyan);
-  box-shadow: var(--glow-cyan-active);
+  border-color: var(--vertex-red);
+  box-shadow: var(--glow-red-active);
 }
 
 .live-dot {
   width: 6px;
   height: 6px;
-  background-color: var(--vertex-cyan);
+  background-color: var(--vertex-red);
   border-radius: 50%;
   animation: blink 2s infinite;
 }

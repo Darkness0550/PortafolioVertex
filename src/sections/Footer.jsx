@@ -6,7 +6,7 @@ export default function Footer() {
         <div style={{ flex: '1', minWidth: '200px' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '8px' }}>
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M12 2L22 20H2L12 2Z" fill="var(--vertex-cyan)"/>
+              <path d="M12 2L22 20H2L12 2Z" fill="var(--vertex-red)"/>
             </svg>
             <span className="font-display text-primary" style={{ fontSize: '14px', letterSpacing: '1px' }}>VERTEX</span>
           </div>

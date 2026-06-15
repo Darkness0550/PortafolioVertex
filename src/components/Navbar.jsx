@@ -29,7 +29,7 @@ export default function Navbar() {
     }}>
       <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M12 2L22 20H2L12 2Z" fill="var(--vertex-cyan)"/>
+          <path d="M12 2L22 20H2L12 2Z" fill="var(--vertex-red)"/>
         </svg>
         <span className="font-display text-primary" style={{ fontSize: '20px', letterSpacing: '1px' }}>VERTEX</span>
       </div>
@@ -41,16 +41,16 @@ export default function Navbar() {
           <a href="#contacto" className="font-body interactive" style={{ fontSize: '14px' }}>Contacto</a>
         </div>
         <button className="cta font-display interactive" style={{
-          border: '1px solid var(--vertex-cyan)',
+          border: '1px solid var(--vertex-red)',
           padding: '8px 16px',
-          color: 'var(--vertex-cyan)',
+          color: 'var(--vertex-red)',
           fontSize: '12px',
           letterSpacing: '1px',
           transition: 'all 0.2s',
           cursor: 'none'
         }}
-        onMouseEnter={(e) => { e.target.style.backgroundColor = 'var(--vertex-cyan)'; e.target.style.color = 'var(--abyss)'; }}
-        onMouseLeave={(e) => { e.target.style.backgroundColor = 'transparent'; e.target.style.color = 'var(--vertex-cyan)'; }}
+        onMouseEnter={(e) => { e.target.style.backgroundColor = 'var(--vertex-red)'; e.target.style.color = 'var(--abyss)'; }}
+        onMouseLeave={(e) => { e.target.style.backgroundColor = 'transparent'; e.target.style.color = 'var(--vertex-red)'; }}
         >
           INICIAR PROYECTO
         </button>

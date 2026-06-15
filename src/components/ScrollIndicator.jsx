@@ -28,7 +28,7 @@ export default function ScrollIndicator() {
       <div style={{
         width: '1px',
         height: scrollHeight,
-        backgroundColor: 'var(--vertex-cyan)',
+        backgroundColor: 'var(--vertex-red)',
         transition: 'height 0.1s'
       }}></div>
     </div>

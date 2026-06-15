@@ -1,19 +1,19 @@
 :root {
   --abyss: #03040A;
-  --vertex-cyan: #00D4E8;
+  --vertex-red: #FF2A2A;
   --vertex-amber: #FF8C42;
   --panel: #0A0D18;
-  --border-glow: #0D1F35;
+  --border-glow: #1A0505;
   --text-primary: #F2F5FF;
   --text-secondary: #6B7A99;
-  --fog: rgba(0, 212, 232, 0.04);
+  --fog: rgba(255, 42, 42, 0.04);
   
   --font-display: 'Chakra Petch', sans-serif;
   --font-body: 'DM Sans', sans-serif;
   --font-code: 'Space Mono', monospace;
 
-  --glow-cyan-subtle: 0 0 24px rgba(0, 212, 232, 0.06);
-  --glow-cyan-active: 0 0 40px rgba(0, 212, 232, 0.15);
+  --glow-red-subtle: 0 0 24px rgba(255, 42, 42, 0.06);
+  --glow-red-active: 0 0 40px rgba(255, 42, 42, 0.15);
   --glow-amber: 0 0 60px rgba(255, 140, 66, 0.20);
 }
 
@@ -62,7 +62,7 @@ button {
 
 .text-primary { color: var(--text-primary); }
 .text-secondary { color: var(--text-secondary); }
-.text-cyan { color: var(--vertex-cyan); }
+.text-red { color: var(--vertex-red); }
 .text-amber { color: var(--vertex-amber); }
 
 /* Common UI Utilities */

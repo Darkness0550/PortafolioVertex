@@ -27,6 +27,37 @@
   100% { transform: rotate(15deg) translateY(0); }
 }
 
+.hero-orbit {
+  position: absolute;
+  top: 5%;
+  right: -5%;
+  width: 55vw;
+  height: 55vw;
+  max-width: 800px;
+  max-height: 800px;
+  border: 1px solid rgba(255, 42, 42, 0.2);
+  border-radius: 50%;
+  z-index: 4;
+  animation: orbit-spin 20s linear infinite;
+  pointer-events: none;
+}
+
+.hero-orbit-dot {
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  width: 16px;
+  height: 16px;
+  background-color: var(--vertex-red);
+  border-radius: 50%;
+  box-shadow: 0 0 20px var(--vertex-red), 0 0 40px var(--vertex-red);
+}
+
+@keyframes orbit-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
 .hero-ticker {
   position: absolute;
   bottom: 0;
