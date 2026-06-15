@@ -39,7 +39,7 @@ export default function Process() {
         <div style={{ position: 'relative', padding: '40px 0', paddingLeft: '40px' }}>
           
           <div style={{ position: 'absolute', top: 0, left: '11px', width: '2px', height: '100%', backgroundColor: '#272A30' }}></div>
-          <div style={{ position: 'absolute', top: 0, left: '11px', width: '2px', height: `${progress}%`, backgroundColor: 'var(--vertex-red)', transition: 'height 0.1s' }}></div>
+          <div style={{ position: 'absolute', top: 0, left: '11px', width: '2px', height: `${progress}%`, backgroundColor: 'var(--vertex-accent)', transition: 'height 0.1s' }}></div>
           
           <div style={{ display: 'flex', flexDirection: 'column', position: 'relative', zIndex: 2, gap: '64px' }}>
             {steps.map((step) => (
@@ -47,7 +47,7 @@ export default function Process() {
                 position: 'relative', 
                 padding: '32px',
                 borderRadius: '12px',
-                boxShadow: 'var(--glow-red-subtle)',
+                boxShadow: 'var(--glow-accent-subtle)',
                 transition: 'border-color 0.3s, box-shadow 0.3s'
               }}>
                 <div style={{ 
@@ -57,13 +57,13 @@ export default function Process() {
                   width: '16px', 
                   height: '16px', 
                   backgroundColor: 'var(--abyss)', 
-                  border: '3px solid var(--vertex-red)',
+                  border: '3px solid var(--vertex-accent)',
                   borderRadius: '50%',
                   zIndex: 10,
-                  boxShadow: '0 0 10px var(--vertex-red)'
+                  boxShadow: '0 0 10px var(--vertex-accent)'
                 }}></div>
                 
-                <div className="font-code text-red process-label" style={{ fontSize: '13px', marginBottom: '16px', display: 'inline-block' }}>
+                <div className="font-code text-accent process-label" style={{ fontSize: '13px', marginBottom: '16px', display: 'inline-block' }}>
                   [ {step.id} ] {step.title}
                 </div>
                 

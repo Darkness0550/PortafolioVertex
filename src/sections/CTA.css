@@ -28,13 +28,13 @@
   left: 0;
   width: 150vw;
   height: 1px;
-  background-color: #0D1F35;
+  background-color: #0C2448;
   pointer-events: none;
   transition: background-color 0.3s;
 }
 
 .input-group.first::after {
-  background-color: var(--vertex-red);
+  background-color: var(--vertex-accent);
 }
 
 .cta-label {
@@ -50,11 +50,11 @@
 .cta-input:not(:placeholder-shown) ~ .cta-label {
   top: -12px;
   font-size: 10px;
-  color: var(--vertex-red);
+  color: var(--vertex-accent);
 }
 
 .input-group:focus-within::after {
-  background-color: var(--vertex-red);
+  background-color: var(--vertex-accent);
 }
 
 .cta-image-wrapper {
@@ -75,7 +75,7 @@
   position: absolute;
   width: 600px;
   height: 600px;
-  background: radial-gradient(circle, rgba(255,140,66,0.15) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(3, 151, 163, 0.12) 0%, transparent 70%);
   z-index: 1;
 }
 

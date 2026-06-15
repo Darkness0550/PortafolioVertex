@@ -58,7 +58,7 @@ export default function Credentials() {
           }}>
             <div className="font-display text-primary" style={{ fontSize: 'clamp(24px, 4vw, 48px)', lineHeight: '1.2' }}>
               <CountUp end={item.num} />
-              <span className="text-red">{item.suffix}</span>
+              <span className="text-accent">{item.suffix}</span>
             </div>
             <div className="font-code text-secondary" style={{ fontSize: '11px', textTransform: 'uppercase' }}>
               {item.label}

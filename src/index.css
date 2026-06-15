@@ -1,20 +1,20 @@
 :root {
-  --abyss: #03040A;
-  --vertex-red: #FF2A2A;
-  --vertex-amber: #FF8C42;
-  --panel: #0A0D18;
-  --border-glow: #1A0505;
+  --abyss: #07152A; /* Darkened version of #0c2448 for contrast */
+  --panel: #0C2448;
+  --vertex-accent: #0397A3;
+  --vertex-secondary: #4A5E65;
+  --border-glow: #4A5E65;
   --text-primary: #F2F5FF;
-  --text-secondary: #6B7A99;
-  --fog: rgba(255, 42, 42, 0.04);
+  --text-secondary: #A0B2B8;
+  --fog: rgba(3, 151, 163, 0.04);
   
   --font-display: 'Chakra Petch', sans-serif;
   --font-body: 'DM Sans', sans-serif;
   --font-code: 'Space Mono', monospace;
 
-  --glow-red-subtle: 0 0 24px rgba(255, 42, 42, 0.06);
-  --glow-red-active: 0 0 40px rgba(255, 42, 42, 0.15);
-  --glow-amber: 0 0 60px rgba(255, 140, 66, 0.20);
+  --glow-accent-subtle: 0 0 24px rgba(3, 151, 163, 0.15);
+  --glow-accent-active: 0 0 40px rgba(3, 151, 163, 0.3);
+  --glow-secondary: 0 0 60px rgba(74, 94, 101, 0.20);
 }
 
 * {
@@ -62,8 +62,8 @@ button {
 
 .text-primary { color: var(--text-primary); }
 .text-secondary { color: var(--text-secondary); }
-.text-red { color: var(--vertex-red); }
-.text-amber { color: var(--vertex-amber); }
+.text-accent { color: var(--vertex-accent); }
+.text-secondary-accent { color: var(--vertex-secondary); }
 
 /* Common UI Utilities */
 .panel {

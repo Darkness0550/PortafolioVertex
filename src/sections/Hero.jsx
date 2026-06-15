@@ -13,7 +13,7 @@ export default function Hero() {
       <img src="/assets/cube_render.png" alt="Data Cube" className="hero-cube" />
       
       <div className="container hero-content" style={{ position: 'relative', zIndex: 10, paddingTop: '25vh' }}>
-        <div className="font-code text-red" style={{ fontSize: '14px', marginBottom: '24px' }}>
+        <div className="font-code text-accent" style={{ fontSize: '14px', marginBottom: '24px' }}>
           [ Desarrollo de Software ]
         </div>
         
@@ -29,7 +29,7 @@ export default function Hero() {
         </p>
         
         <div style={{ display: 'flex', alignItems: 'center', gap: '24px' }}>
-          <button className="cta interactive font-display text-red" style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '14px', borderBottom: '1px solid var(--vertex-red)', paddingBottom: '4px' }}>
+          <button className="cta interactive font-display text-accent" style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '14px', borderBottom: '1px solid var(--vertex-accent)', paddingBottom: '4px' }}>
             INICIAR PROYECTO <span>▶</span>
           </button>
           <a href="#proyectos" className="font-code text-secondary interactive" style={{ fontSize: '12px' }}>

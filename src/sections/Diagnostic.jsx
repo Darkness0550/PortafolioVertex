@@ -66,7 +66,7 @@ export default function Diagnostic() {
                   borderRadius: '12px',
                   opacity: selected ? (selected === opt.id ? 1 : 0.2) : 1,
                   transition: 'opacity 0.3s',
-                  border: selected === opt.id ? '1px solid var(--vertex-red)' : '1px solid var(--border-glow)'
+                  border: selected === opt.id ? '1px solid var(--vertex-accent)' : '1px solid var(--border-glow)'
                 }}
               >
                 <span style={{ fontSize: '40px' }}>{opt.icon}</span>
@@ -77,7 +77,7 @@ export default function Diagnostic() {
         ) : (
           <select 
             className="font-code text-primary panel" 
-            style={{ width: '100%', padding: '16px', marginBottom: '40px', borderRadius: '8px', border: '1px solid var(--vertex-red)' }}
+            style={{ width: '100%', padding: '16px', marginBottom: '40px', borderRadius: '8px', border: '1px solid var(--vertex-accent)' }}
             onChange={(e) => setSelected(e.target.value)}
             defaultValue=""
           >
@@ -88,7 +88,7 @@ export default function Diagnostic() {
 
         {selected && (
           <div style={{ position: 'relative', marginTop: '24px' }}>
-            <div style={{ position: 'absolute', top: '10px', left: '-10px', width: '100%', height: '100%', border: '1px solid rgba(255, 42, 42, 0.4)', zIndex: 0 }}></div>
+            <div style={{ position: 'absolute', top: '10px', left: '-10px', width: '100%', height: '100%', border: '1px solid rgba(3, 151, 163, 0.4)', zIndex: 0 }}></div>
             
             <div className="panel" style={{ 
               position: 'relative',
@@ -106,7 +106,7 @@ export default function Diagnostic() {
                 {typedText}
               </pre>
               
-              <a href="#contacto" className="interactive font-code text-red" style={{ fontSize: '13px', borderBottom: '1px solid var(--vertex-red)', paddingBottom: '2px' }}>
+              <a href="#contacto" className="interactive font-code text-accent" style={{ fontSize: '13px', borderBottom: '1px solid var(--vertex-accent)', paddingBottom: '2px' }}>
                 [Hablar sobre tu proyecto similar →]
               </a>
             </div>

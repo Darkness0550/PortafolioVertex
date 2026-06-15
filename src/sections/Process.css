@@ -3,8 +3,8 @@
 }
 
 .process-step:hover {
-  border-color: var(--vertex-red) !important;
-  box-shadow: var(--glow-red-active) !important;
+  border-color: var(--vertex-accent) !important;
+  box-shadow: var(--glow-accent-active) !important;
 }
 
 .process-label {

@@ -33,7 +33,7 @@ export default function Statement() {
               <path 
                 d="M 0 10 Q 50 20 100 10 T 200 10" 
                 fill="transparent" 
-                stroke="var(--vertex-red)" 
+                stroke="var(--vertex-accent)" 
                 strokeWidth="4"
                 style={{
                   strokeDasharray: 200,
@@ -54,7 +54,7 @@ export default function Statement() {
         <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
           {['Diagnóstico técnico sin costo', 'Arquitectura antes de presupuesto', 'Deploy en infraestructura del cliente o la nuestra'].map((text, i) => (
             <div key={i} style={{ display: 'flex', gap: '12px', alignItems: 'center' }}>
-              <span className="font-code text-red" style={{ fontSize: '13px' }}>[ ✓ ]</span>
+              <span className="font-code text-accent" style={{ fontSize: '13px' }}>[ ✓ ]</span>
               <span className="font-body text-primary" style={{ fontSize: '15px' }}>{text}</span>
             </div>
           ))}

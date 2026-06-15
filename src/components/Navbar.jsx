@@ -42,16 +42,16 @@ export default function Navbar() {
           <a href="#contacto" className="font-body interactive" style={{ fontSize: '14px' }}>Contacto</a>
         </div>
         <button className="cta font-display interactive" style={{
-          border: '1px solid var(--vertex-red)',
+          border: '1px solid var(--vertex-accent)',
           padding: '8px 16px',
-          color: 'var(--vertex-red)',
+          color: 'var(--vertex-accent)',
           fontSize: '12px',
           letterSpacing: '1px',
           transition: 'all 0.2s',
           cursor: 'none'
         }}
-        onMouseEnter={(e) => { e.target.style.backgroundColor = 'var(--vertex-red)'; e.target.style.color = 'var(--abyss)'; }}
-        onMouseLeave={(e) => { e.target.style.backgroundColor = 'transparent'; e.target.style.color = 'var(--vertex-red)'; }}
+        onMouseEnter={(e) => { e.target.style.backgroundColor = 'var(--vertex-accent)'; e.target.style.color = 'var(--abyss)'; }}
+        onMouseLeave={(e) => { e.target.style.backgroundColor = 'transparent'; e.target.style.color = 'var(--vertex-accent)'; }}
         >
           INICIAR PROYECTO
         </button>

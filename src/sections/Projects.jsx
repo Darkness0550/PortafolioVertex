@@ -23,7 +23,7 @@ export default function Projects() {
           {projects.map((p, i) => (
             <div key={i} className="project-card interactive">
               <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '16px' }}>
-                <div className="font-code text-red" style={{ fontSize: '11px', display: 'flex', alignItems: 'center', gap: '6px' }}>
+                <div className="font-code text-accent" style={{ fontSize: '11px', display: 'flex', alignItems: 'center', gap: '6px' }}>
                   <div className="live-dot"></div> EN VIVO
                 </div>
                 <div className="font-code text-secondary" style={{ fontSize: '11px' }}>[{p.year}]</div>
@@ -42,11 +42,11 @@ export default function Projects() {
                   return (
                     <span key={idx} className="font-code" style={{
                       fontSize: '11px',
-                      color: 'var(--vertex-red)',
-                      border: '1px solid rgba(255, 42, 42, 0.4)',
+                      color: 'var(--vertex-accent)',
+                      border: '1px solid rgba(3, 151, 163, 0.4)',
                       borderRadius: '16px',
                       padding: '4px 10px',
-                      backgroundColor: 'rgba(255, 42, 42, 0.05)'
+                      backgroundColor: 'rgba(3, 151, 163, 0.05)'
                     }}>
                       {t}
                     </span>

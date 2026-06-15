@@ -26,7 +26,7 @@ export default function CTA() {
             {status === 'success' ? (
               <div style={{ animation: 'fade-in 0.5s' }}>
                 <div style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
-                  <span className="font-code text-red" style={{ fontSize: '14px' }}>[ ✓ ]</span>
+                  <span className="font-code text-accent" style={{ fontSize: '14px' }}>[ ✓ ]</span>
                   <pre className="font-code text-primary" style={{ fontSize: '14px', whiteSpace: 'pre-line', lineHeight: '1.6' }}>
                     Briefing recibido.
                     Te contactamos en menos de 24 horas.
@@ -39,7 +39,7 @@ export default function CTA() {
                 
                 <div className="input-group first">
                   <input type="text" required placeholder=" " className="cta-input interactive font-body text-primary" />
-                  <label className="cta-label font-code text-red">Nombre o empresa</label>
+                  <label className="cta-label font-code text-accent">Nombre o empresa</label>
                 </div>
                 
                 <div className="input-group">
@@ -54,9 +54,9 @@ export default function CTA() {
 
                 <div style={{ marginTop: '32px' }}>
                   <button type="submit" className="interactive font-display" style={{
-                    border: '1px solid var(--vertex-red)',
+                    border: '1px solid var(--vertex-accent)',
                     padding: '16px 32px',
-                    color: 'var(--vertex-red)',
+                    color: 'var(--vertex-accent)',
                     fontSize: '14px',
                     letterSpacing: '1px',
                     background: 'transparent',
@@ -66,8 +66,8 @@ export default function CTA() {
                     gap: '8px',
                     cursor: 'none'
                   }}
-                  onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = 'var(--vertex-red)'; e.currentTarget.style.color = 'var(--abyss)'; }}
-                  onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = 'transparent'; e.currentTarget.style.color = 'var(--vertex-red)'; }}
+                  onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = 'var(--vertex-accent)'; e.currentTarget.style.color = 'var(--abyss)'; }}
+                  onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = 'transparent'; e.currentTarget.style.color = 'var(--vertex-accent)'; }}
                   >
                     INICIAR PROYECTO <span>▶</span>
                   </button>

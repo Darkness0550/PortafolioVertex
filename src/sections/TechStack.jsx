@@ -96,11 +96,11 @@ export default function TechStack() {
           <g key={i}>
             <line 
               x1={line.x1} y1={line.y1} x2={line.x2} y2={line.y2} 
-              stroke="var(--vertex-red)" 
+              stroke="var(--vertex-accent)" 
               strokeWidth="1" 
               opacity="0.4" 
             />
-            <circle cx={line.x2} cy={line.y2} r="3" fill="var(--vertex-red)" />
+            <circle cx={line.x2} cy={line.y2} r="3" fill="var(--vertex-accent)" />
           </g>
         ))}
       </svg>

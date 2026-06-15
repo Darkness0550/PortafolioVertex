@@ -4,7 +4,7 @@
   left: -3px;
   width: 6px;
   height: 6px;
-  background-color: var(--vertex-red);
+  background-color: var(--vertex-accent);
   border-radius: 50%;
   z-index: 9999;
   transition: opacity 0.2s;
