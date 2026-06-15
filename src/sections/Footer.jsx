@@ -4,12 +4,13 @@ export default function Footer() {
       <div className="container" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '24px' }}>
         
         <div style={{ flex: '1', minWidth: '200px' }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '8px' }}>
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M12 2L22 20H2L12 2Z" fill="var(--vertex-red)"/>
-            </svg>
-            <span className="font-display text-primary" style={{ fontSize: '14px', letterSpacing: '1px' }}>VERTEX</span>
-          </div>
+          <button 
+            className="interactive"
+            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+            style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '8px', background: 'none', border: 'none', cursor: 'pointer', padding: 0 }}
+          >
+            <img src="/src/assets/VertexLogo.png" alt="Vertex Logo" style={{ height: '24px' }} />
+          </button>
           <div className="font-code text-secondary" style={{ fontSize: '11px' }}>
             // building systems since 2017
           </div>

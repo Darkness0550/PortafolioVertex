@@ -14,7 +14,7 @@ export default function CTA() {
 
   return (
     <section id="contacto" className="section-reveal cta-section" style={{ minHeight: '100vh', position: 'relative', display: 'flex', alignItems: 'center' }}>
-      <div className="container" style={{ position: 'relative', zIndex: 10, display: 'flex', flexWrap: 'wrap', width: '100%' }}>
+      <div className="container" style={{ position: 'relative', zIndex: 2, display: 'flex', flexWrap: 'wrap', width: '100%' }}>
         
         <div style={{ flex: '1 1 50%', minWidth: '300px', paddingRight: '5%' }}>
           <h2 className="font-display text-primary" style={{ fontSize: 'clamp(48px, 6vw, 72px)', lineHeight: '1.1', marginBottom: '64px' }}>
@@ -35,11 +35,11 @@ export default function CTA() {
                 </div>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '32px', opacity: status === 'submitting' ? 0.5 : 1, transition: 'opacity 0.3s' }}>
+              <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '48px', opacity: status === 'submitting' ? 0.5 : 1, transition: 'opacity 0.3s' }}>
                 
-                <div className="input-group">
+                <div className="input-group first">
                   <input type="text" required placeholder=" " className="cta-input interactive font-body text-primary" />
-                  <label className="cta-label font-code text-secondary">Nombre o empresa</label>
+                  <label className="cta-label font-code text-red">Nombre o empresa</label>
                 </div>
                 
                 <div className="input-group">
@@ -52,7 +52,7 @@ export default function CTA() {
                   <label className="cta-label font-code text-secondary">Describe tu proyecto en una línea</label>
                 </div>
 
-                <div style={{ marginTop: '16px' }}>
+                <div style={{ marginTop: '32px' }}>
                   <button type="submit" className="interactive font-display" style={{
                     border: '1px solid var(--vertex-red)',
                     padding: '16px 32px',

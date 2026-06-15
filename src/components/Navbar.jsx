@@ -27,12 +27,13 @@ export default function Navbar() {
       backdropFilter: scrolled ? 'blur(8px)' : 'none',
       borderBottom: scrolled ? '1px solid var(--border-glow)' : 'none',
     }}>
-      <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M12 2L22 20H2L12 2Z" fill="var(--vertex-red)"/>
-        </svg>
-        <span className="font-display text-primary" style={{ fontSize: '20px', letterSpacing: '1px' }}>VERTEX</span>
-      </div>
+      <button 
+        className="navbar-logo interactive" 
+        onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+        style={{ display: 'flex', alignItems: 'center', gap: '8px', background: 'none', border: 'none', cursor: 'pointer', padding: 0 }}
+      >
+        <img src="/src/assets/VertexLogo.png" alt="Vertex Logo" style={{ height: '24px' }} />
+      </button>
       
       <div style={{ display: 'flex', gap: '32px', alignItems: 'center' }} className="nav-links">
         <div style={{ display: window.innerWidth > 768 ? 'flex' : 'none', gap: '24px' }}>
