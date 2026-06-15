@@ -21,9 +21,9 @@ export default function Navbar() {
       display: 'flex',
       justifyContent: 'space-between',
       alignItems: 'center',
-      padding: '24px 5%',
+      padding: '20px 5%',
       transition: 'background-color 0.3s, backdrop-filter 0.3s',
-      backgroundColor: scrolled ? 'rgba(3, 4, 10, 0.7)' : 'transparent',
+      backgroundColor: scrolled ? 'rgba(3, 4, 10, 0.85)' : 'transparent',
       backdropFilter: scrolled ? 'blur(8px)' : 'none',
       borderBottom: scrolled ? '1px solid var(--border-glow)' : 'none',
     }}>
@@ -32,29 +32,29 @@ export default function Navbar() {
         onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
         style={{ display: 'flex', alignItems: 'center', gap: '8px', background: 'none', border: 'none', cursor: 'pointer', padding: 0 }}
       >
-        <img src="/src/assets/VertexLogo.png" alt="Vertex Logo" style={{ height: '24px' }} />
+        <img src="/src/assets/VertexLogo.png" alt="Vertex Logo" style={{ height: '22px' }} />
       </button>
       
-      <div style={{ display: 'flex', gap: '32px', alignItems: 'center' }} className="nav-links">
-        <div style={{ display: window.innerWidth > 768 ? 'flex' : 'none', gap: '24px' }}>
-          <a href="#proyectos" className="font-body interactive" style={{ fontSize: '14px' }}>Proyectos</a>
-          <a href="#stack" className="font-body interactive" style={{ fontSize: '14px' }}>Stack</a>
-          <a href="#contacto" className="font-body interactive" style={{ fontSize: '14px' }}>Contacto</a>
+      <div className="nav-links" style={{ display: 'flex', gap: '32px', alignItems: 'center' }}>
+        <div className="nav-desktop-links" style={{ display: 'flex', gap: '24px' }}>
+          <a href="#proyectos" className="font-body interactive text-secondary" style={{ fontSize: '14px', transition: 'color 0.2s' }} onMouseEnter={e => e.target.style.color='var(--text-primary)'} onMouseLeave={e => e.target.style.color='var(--text-secondary)'}>Proyectos</a>
+          <a href="#stack" className="font-body interactive text-secondary" style={{ fontSize: '14px', transition: 'color 0.2s' }} onMouseEnter={e => e.target.style.color='var(--text-primary)'} onMouseLeave={e => e.target.style.color='var(--text-secondary)'}>Stack</a>
+          <a href="#contacto" className="font-body interactive text-secondary" style={{ fontSize: '14px', transition: 'color 0.2s' }} onMouseEnter={e => e.target.style.color='var(--text-primary)'} onMouseLeave={e => e.target.style.color='var(--text-secondary)'}>Contacto</a>
         </div>
-        <button className="cta font-display interactive" style={{
+        <a href="#contacto" className="cta font-display interactive" style={{
           border: '1px solid var(--vertex-accent)',
           padding: '8px 16px',
           color: 'var(--vertex-accent)',
           fontSize: '12px',
           letterSpacing: '1px',
           transition: 'all 0.2s',
-          cursor: 'none'
+          whiteSpace: 'nowrap'
         }}
-        onMouseEnter={(e) => { e.target.style.backgroundColor = 'var(--vertex-accent)'; e.target.style.color = 'var(--abyss)'; }}
-        onMouseLeave={(e) => { e.target.style.backgroundColor = 'transparent'; e.target.style.color = 'var(--vertex-accent)'; }}
+        onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = 'var(--vertex-accent)'; e.currentTarget.style.color = 'var(--abyss)'; }}
+        onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = 'transparent'; e.currentTarget.style.color = 'var(--vertex-accent)'; }}
         >
           INICIAR PROYECTO
-        </button>
+        </a>
       </div>
     </nav>
   );

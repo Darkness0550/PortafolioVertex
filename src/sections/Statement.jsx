@@ -6,19 +6,16 @@ export default function Statement() {
 
   useEffect(() => {
     const observer = new IntersectionObserver(([entry]) => {
-      if (entry.isIntersecting) {
-        setIsVisible(true);
-      }
-    }, { threshold: 0.5 });
-    
+      if (entry.isIntersecting) setIsVisible(true);
+    }, { threshold: 0.3 });
     if (ref.current) observer.observe(ref.current);
     return () => observer.disconnect();
   }, []);
 
   return (
-    <section ref={ref} className="section-reveal container" style={{ padding: '120px 24px', display: 'flex', gap: '5%', flexWrap: 'wrap' }}>
-      <div style={{ flex: '1 1 55%', minWidth: '300px', marginBottom: '40px' }}>
-        <h2 className="font-display text-primary" style={{ fontSize: 'clamp(40px, 5vw, 56px)', lineHeight: '1.2' }}>
+    <section ref={ref} className="section-reveal statement-section" style={{ padding: '120px 24px', display: 'flex', gap: '5%', flexWrap: 'wrap' }}>
+      <div className="statement-left" style={{ flex: '1 1 55%', minWidth: '300px', marginBottom: '40px' }}>
+        <h2 className="font-display text-primary" style={{ fontSize: 'clamp(36px, 5vw, 56px)', lineHeight: '1.2' }}>
           No vendemos<br />
           horas.<br />
           Entregamos <span style={{ position: 'relative', display: 'inline-block' }}>
@@ -46,15 +43,15 @@ export default function Statement() {
         </h2>
       </div>
       
-      <div style={{ flex: '1 1 40%', minWidth: '300px', paddingTop: '16px' }}>
+      <div className="statement-right" style={{ flex: '1 1 40%', minWidth: '280px', paddingTop: '16px' }}>
         <p className="font-body text-secondary" style={{ fontSize: '16px', lineHeight: '1.6', marginBottom: '32px' }}>
           "Cada proyecto de Vertex comienza con una pregunta real: ¿qué problema de negocio resuelve este sistema? No empezamos a codear hasta tener la respuesta."
         </p>
         
         <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
           {['Diagnóstico técnico sin costo', 'Arquitectura antes de presupuesto', 'Deploy en infraestructura del cliente o la nuestra'].map((text, i) => (
-            <div key={i} style={{ display: 'flex', gap: '12px', alignItems: 'center' }}>
-              <span className="font-code text-accent" style={{ fontSize: '13px' }}>[ ✓ ]</span>
+            <div key={i} style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
+              <span className="font-code text-accent" style={{ fontSize: '13px', flexShrink: 0 }}>[ ✓ ]</span>
               <span className="font-body text-primary" style={{ fontSize: '15px' }}>{text}</span>
             </div>
           ))}

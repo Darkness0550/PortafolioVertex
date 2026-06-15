@@ -17,21 +17,21 @@ export default function Hero() {
           [ Desarrollo de Software ]
         </div>
         
-        <h1 className="font-display text-primary hero-title" style={{ fontSize: '72px', lineHeight: '1.1', marginBottom: '32px', zIndex: 20, position: 'relative' }}>
+        <h1 className="font-display text-primary hero-title" style={{ fontSize: 'clamp(40px, 8vw, 72px)', lineHeight: '1.1', marginBottom: '32px', zIndex: 20, position: 'relative' }}>
           Construimos<br />
           sistemas que<br />
           no fallan.
         </h1>
         
-        <p className="font-body text-secondary" style={{ fontSize: '18px', maxWidth: '400px', marginBottom: '48px' }}>
+        <p className="font-body text-secondary hero-subtitle" style={{ fontSize: '18px', maxWidth: '400px', marginBottom: '48px' }}>
           Software real.<br />
           Infraestructura real.
         </p>
         
-        <div style={{ display: 'flex', alignItems: 'center', gap: '24px' }}>
-          <button className="cta interactive font-display text-accent" style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '14px', borderBottom: '1px solid var(--vertex-accent)', paddingBottom: '4px' }}>
+        <div className="hero-cta-row" style={{ display: 'flex', alignItems: 'center', gap: '24px' }}>
+          <a href="#contacto" className="cta interactive font-display text-accent" style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '14px', borderBottom: '1px solid var(--vertex-accent)', paddingBottom: '4px' }}>
             INICIAR PROYECTO <span>▶</span>
-          </button>
+          </a>
           <a href="#proyectos" className="font-code text-secondary interactive" style={{ fontSize: '12px' }}>
             ver trabajo ↓
           </a>

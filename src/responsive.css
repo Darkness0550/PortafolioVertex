@@ -1,0 +1,215 @@
+/* ======================================
+   RESPONSIVE GLOBAL OVERRIDES
+   Breakpoints: 768px (tablet), 480px (mobile)
+   ====================================== */
+
+/* --- Navbar --- */
+@media (max-width: 768px) {
+  .nav-links .nav-desktop-links {
+    display: none !important;
+  }
+  .nav-links {
+    gap: 12px !important;
+  }
+}
+
+/* --- Container --- */
+@media (max-width: 480px) {
+  .container {
+    padding: 0 16px !important;
+  }
+}
+
+/* --- Hero --- */
+@media (max-width: 768px) {
+  .hero-content {
+    padding-top: 18vh !important;
+    padding-bottom: 60px;
+  }
+  .hero-title {
+    font-size: clamp(36px, 11vw, 64px) !important;
+    line-height: 1.1 !important;
+  }
+  .hero-subtitle {
+    font-size: 15px !important;
+    max-width: 100% !important;
+  }
+  .hero-cta-row {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 16px !important;
+  }
+}
+
+/* --- Credentials --- */
+@media (max-width: 768px) {
+  .credentials-row {
+    height: auto !important;
+    flex-wrap: wrap !important;
+  }
+  .credentials-item {
+    flex: 1 1 50% !important;
+    min-width: 0 !important;
+    padding: 20px 16px !important;
+    border-right: none !important;
+    border-bottom: 1px solid var(--border-glow) !important;
+  }
+  .credentials-item:nth-child(odd) {
+    border-right: 1px solid var(--border-glow) !important;
+  }
+  .credentials-item:nth-child(3),
+  .credentials-item:nth-child(4) {
+    border-bottom: none !important;
+  }
+}
+
+/* --- Statement --- */
+@media (max-width: 768px) {
+  .statement-section {
+    padding: 80px 16px !important;
+    flex-direction: column !important;
+    gap: 48px !important;
+  }
+  .statement-left, .statement-right {
+    flex: 1 1 100% !important;
+    min-width: 0 !important;
+  }
+}
+
+/* --- Projects --- */
+@media (max-width: 768px) {
+  .projects-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .project-card {
+    padding: 24px !important;
+  }
+}
+
+/* --- Diagnostic --- */
+@media (max-width: 768px) {
+  .diagnostic-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 12px !important;
+  }
+  .diagnostic-grid button {
+    padding: 20px 10px !important;
+    gap: 10px !important;
+  }
+  .diagnostic-grid span:first-child {
+    font-size: 28px !important;
+  }
+}
+
+/* --- TechStack --- */
+@media (max-width: 768px) {
+  .techstack-section {
+    flex-direction: column !important;
+    min-height: auto !important;
+  }
+  .techstack-sphere {
+    width: 100% !important;
+    height: 200px !important;
+    flex: none !important;
+    overflow: hidden;
+  }
+  .techstack-sphere img {
+    width: 80% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    display: block !important;
+    opacity: 0.5 !important;
+  }
+  .techstack-grid {
+    padding: 40px 16px !important;
+    width: 100% !important;
+  }
+}
+
+/* --- Process --- */
+@media (max-width: 768px) {
+  .process-section {
+    padding: 80px 16px !important;
+  }
+  .process-timeline {
+    padding-left: 28px !important;
+  }
+  .process-step {
+    padding: 20px !important;
+  }
+  .process-node {
+    left: -25px !important;
+    width: 12px !important;
+    height: 12px !important;
+  }
+}
+
+/* --- Testimonial --- */
+@media (max-width: 768px) {
+  .testimonial-section {
+    padding: 80px 16px !important;
+  }
+  .testimonial-quote-mark {
+    font-size: 80px !important;
+    top: -40px !important;
+    left: -16px !important;
+  }
+  .testimonial-metrics {
+    flex-direction: column !important;
+  }
+  .testimonial-metric {
+    flex: 1 1 100% !important;
+  }
+}
+
+/* --- CTA --- */
+@media (max-width: 768px) {
+  .cta-section {
+    padding: 80px 0 120px !important;
+    min-height: auto !important;
+  }
+  .cta-form-col {
+    flex: 1 1 100% !important;
+    padding-right: 0 !important;
+    min-width: 0 !important;
+  }
+  .cta-image-wrapper {
+    width: 100% !important;
+    position: relative !important;
+    top: auto !important;
+    transform: none !important;
+    opacity: 0.2 !important;
+    height: 200px !important;
+    margin-top: 40px;
+  }
+  .cta-title {
+    font-size: clamp(36px, 10vw, 56px) !important;
+    margin-bottom: 40px !important;
+  }
+  .input-group::after {
+    width: 100vw !important;
+  }
+}
+
+/* --- Footer --- */
+@media (max-width: 768px) {
+  .footer-inner {
+    flex-direction: column !important;
+    gap: 32px !important;
+    align-items: flex-start !important;
+  }
+  .footer-nav {
+    flex-wrap: wrap !important;
+    gap: 16px !important;
+  }
+  .footer-social {
+    justify-content: flex-start !important;
+  }
+}
+
+/* --- Global typography scale for small screens --- */
+@media (max-width: 480px) {
+  .font-display {
+    word-break: break-word;
+  }
+}
