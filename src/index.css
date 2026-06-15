@@ -1,0 +1,95 @@
+:root {
+  --abyss: #03040A;
+  --vertex-cyan: #00D4E8;
+  --vertex-amber: #FF8C42;
+  --panel: #0A0D18;
+  --border-glow: #0D1F35;
+  --text-primary: #F2F5FF;
+  --text-secondary: #6B7A99;
+  --fog: rgba(0, 212, 232, 0.04);
+  
+  --font-display: 'Chakra Petch', sans-serif;
+  --font-body: 'DM Sans', sans-serif;
+  --font-code: 'Space Mono', monospace;
+
+  --glow-cyan-subtle: 0 0 24px rgba(0, 212, 232, 0.06);
+  --glow-cyan-active: 0 0 40px rgba(0, 212, 232, 0.15);
+  --glow-amber: 0 0 60px rgba(255, 140, 66, 0.20);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--abyss);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom Cursor */
+body {
+  cursor: none;
+}
+@media (max-width: 768px) {
+  body {
+    cursor: auto;
+  }
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-family: inherit;
+  color: inherit;
+}
+
+/* Typography Utilities */
+.font-display { font-family: var(--font-display); }
+.font-body { font-family: var(--font-body); }
+.font-code { font-family: var(--font-code); }
+
+.text-primary { color: var(--text-primary); }
+.text-secondary { color: var(--text-secondary); }
+.text-cyan { color: var(--vertex-cyan); }
+.text-amber { color: var(--vertex-amber); }
+
+/* Common UI Utilities */
+.panel {
+  background-color: var(--panel);
+  border: 1px solid var(--border-glow);
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* Global Section Entry Animations */
+.section-reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 500ms ease-out, transform 500ms ease-out;
+}
+.section-reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}

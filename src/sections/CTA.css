@@ -1,0 +1,87 @@
+.cta-section {
+  background-color: var(--abyss);
+  overflow: hidden;
+  padding: 120px 0;
+}
+
+.input-group {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.cta-input {
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #0D1F35;
+  padding: 12px 0;
+  font-size: 16px;
+  outline: none;
+  transition: border-color 0.2s;
+  cursor: none;
+}
+
+.cta-label {
+  position: absolute;
+  top: 14px;
+  left: 0;
+  font-size: 14px;
+  pointer-events: none;
+  transition: all 0.2s;
+}
+
+.cta-input:focus {
+  border-bottom-color: var(--vertex-cyan);
+}
+
+.cta-input:focus ~ .cta-label,
+.cta-input:not(:placeholder-shown) ~ .cta-label {
+  top: -12px;
+  font-size: 10px;
+  color: var(--vertex-cyan);
+}
+
+.cta-image-wrapper {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+.cta-glow-amber {
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(255,140,66,0.15) 0%, transparent 70%);
+  z-index: 1;
+}
+
+.cta-triangle {
+  width: 80%;
+  max-width: 600px;
+  z-index: 2;
+  mix-blend-mode: screen;
+}
+
+@media (max-width: 768px) {
+  .cta-image-wrapper {
+    width: 100%;
+    opacity: 0.3;
+    pointer-events: none;
+  }
+  .cta-triangle {
+    width: 60%;
+  }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}

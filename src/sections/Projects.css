@@ -1,0 +1,64 @@
+.projects-section {
+  position: relative;
+  min-height: 100vh;
+  background-color: var(--abyss);
+}
+
+.projects-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('/assets/fragments_render.png');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.15;
+  z-index: 1;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+@media (max-width: 768px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.project-card {
+  background-color: var(--panel);
+  border: 1px solid var(--border-glow);
+  border-radius: 12px;
+  padding: 32px;
+  box-shadow: var(--glow-cyan-subtle);
+  display: flex;
+  flex-direction: column;
+  transition: border-color 200ms ease-out, box-shadow 200ms ease-out;
+  backdrop-filter: blur(4px);
+}
+
+.project-card:hover {
+  border-color: var(--vertex-cyan);
+  box-shadow: var(--glow-cyan-active);
+}
+
+.live-dot {
+  width: 6px;
+  height: 6px;
+  background-color: var(--vertex-cyan);
+  border-radius: 50%;
+  animation: blink 2s infinite;
+}
+
+.project-card:hover .live-dot {
+  animation: blink 0.8s infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}

@@ -1,0 +1,68 @@
+.hero-atmosphere {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 60% 40%, #051428 0%, var(--abyss) 60%);
+  z-index: 1;
+}
+
+.hero-cube {
+  position: absolute;
+  top: 10%;
+  right: -5%;
+  width: 55%;
+  max-width: 800px;
+  object-fit: contain;
+  z-index: 5;
+  transform: rotate(15deg);
+  animation: float-rotate 60s linear infinite;
+  mix-blend-mode: screen;
+}
+
+@keyframes float-rotate {
+  0% { transform: rotate(15deg) translateY(0); }
+  50% { transform: rotate(16deg) translateY(-20px); }
+  100% { transform: rotate(15deg) translateY(0); }
+}
+
+.hero-ticker {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 40px;
+  border-top: 1px solid var(--border-glow);
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background-color: var(--abyss);
+  z-index: 20;
+}
+
+.ticker-content {
+  display: flex;
+  gap: 2rem;
+  white-space: nowrap;
+  animation: ticker 20s linear infinite;
+  font-size: 12px;
+}
+
+@keyframes ticker {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@media (max-width: 768px) {
+  .hero-cube {
+    width: 100%;
+    right: 0;
+    opacity: 0.4;
+    z-index: 1;
+    top: 20%;
+  }
+  .hero-title {
+    font-size: 48px !important;
+  }
+}
