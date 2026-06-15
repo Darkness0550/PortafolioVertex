@@ -7,27 +7,25 @@ export default function CTA() {
   const handleSubmit = (e) => {
     e.preventDefault();
     setStatus('submitting');
-    setTimeout(() => {
-      setStatus('success');
-    }, 800);
+    setTimeout(() => setStatus('success'), 800);
   };
 
   return (
     <section id="contacto" className="section-reveal cta-section" style={{ minHeight: '100vh', position: 'relative', display: 'flex', alignItems: 'center' }}>
       <div className="container" style={{ position: 'relative', zIndex: 2, display: 'flex', flexWrap: 'wrap', width: '100%' }}>
         
-        <div style={{ flex: '1 1 50%', minWidth: '300px', paddingRight: '5%' }}>
-          <h2 className="font-display text-primary" style={{ fontSize: 'clamp(48px, 6vw, 72px)', lineHeight: '1.1', marginBottom: '64px' }}>
+        <div className="cta-form-col" style={{ flex: '1 1 50%', minWidth: '300px', paddingRight: '5%' }}>
+          <h2 className="font-display text-primary cta-title" style={{ fontSize: 'clamp(46px, 6vw, 83px)', lineHeight: '1.1', marginBottom: '64px' }}>
             Construyamos<br />
             algo que dure.
           </h2>
 
-          <div style={{ minHeight: '300px', position: 'relative' }}>
+          <div style={{ minHeight: '280px', position: 'relative' }}>
             {status === 'success' ? (
               <div style={{ animation: 'fade-in 0.5s' }}>
                 <div style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
-                  <span className="font-code text-accent" style={{ fontSize: '14px' }}>[ ✓ ]</span>
-                  <pre className="font-code text-primary" style={{ fontSize: '14px', whiteSpace: 'pre-line', lineHeight: '1.6' }}>
+                  <span className="font-code text-accent" style={{ fontSize: '16px' }}>[ ✓ ]</span>
+                  <pre className="font-code text-primary" style={{ fontSize: '16px', whiteSpace: 'pre-line', lineHeight: '1.6' }}>
                     Briefing recibido.
                     Te contactamos en menos de 24 horas.
                     — Equipo Vertex
@@ -43,7 +41,7 @@ export default function CTA() {
                 </div>
                 
                 <div className="input-group">
-                  <input type="text" required placeholder=" " className="cta-input interactive font-body text-primary" />
+                  <input type="email" required placeholder=" " className="cta-input interactive font-body text-primary" />
                   <label className="cta-label font-code text-secondary">Email o WhatsApp</label>
                 </div>
                 
@@ -52,19 +50,18 @@ export default function CTA() {
                   <label className="cta-label font-code text-secondary">Describe tu proyecto en una línea</label>
                 </div>
 
-                <div style={{ marginTop: '32px' }}>
+                <div>
                   <button type="submit" className="interactive font-display" style={{
                     border: '1px solid var(--vertex-accent)',
                     padding: '16px 32px',
                     color: 'var(--vertex-accent)',
-                    fontSize: '14px',
+                    fontSize: '16px',
                     letterSpacing: '1px',
                     background: 'transparent',
                     transition: 'all 0.15s',
                     display: 'flex',
                     alignItems: 'center',
                     gap: '8px',
-                    cursor: 'none'
                   }}
                   onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = 'var(--vertex-accent)'; e.currentTarget.style.color = 'var(--abyss)'; }}
                   onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = 'transparent'; e.currentTarget.style.color = 'var(--vertex-accent)'; }}

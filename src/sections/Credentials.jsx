@@ -48,11 +48,11 @@ export default function Credentials() {
             paddingLeft: '2%',
             borderRight: i !== 3 ? '1px solid var(--border-glow)' : 'none'
           }}>
-            <div className="font-display text-primary" style={{ fontSize: 'clamp(20px, 4vw, 48px)', lineHeight: '1.2' }}>
+            <div className="font-display text-primary" style={{ fontSize: 'clamp(23px, 4vw, 55px)', lineHeight: '1.2' }}>
               <CountUp end={item.num} />
               <span className="text-accent">{item.suffix}</span>
             </div>
-            <div className="font-code text-secondary" style={{ fontSize: '11px', textTransform: 'uppercase' }}>
+            <div className="font-code text-secondary" style={{ fontSize: '13px', textTransform: 'uppercase' }}>
               {item.label}
             </div>
           </div>

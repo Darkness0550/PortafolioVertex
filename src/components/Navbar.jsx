@@ -37,15 +37,15 @@ export default function Navbar() {
       
       <div className="nav-links" style={{ display: 'flex', gap: '32px', alignItems: 'center' }}>
         <div className="nav-desktop-links" style={{ display: 'flex', gap: '24px' }}>
-          <a href="#proyectos" className="font-body interactive text-secondary" style={{ fontSize: '14px', transition: 'color 0.2s' }} onMouseEnter={e => e.target.style.color='var(--text-primary)'} onMouseLeave={e => e.target.style.color='var(--text-secondary)'}>Proyectos</a>
-          <a href="#stack" className="font-body interactive text-secondary" style={{ fontSize: '14px', transition: 'color 0.2s' }} onMouseEnter={e => e.target.style.color='var(--text-primary)'} onMouseLeave={e => e.target.style.color='var(--text-secondary)'}>Stack</a>
-          <a href="#contacto" className="font-body interactive text-secondary" style={{ fontSize: '14px', transition: 'color 0.2s' }} onMouseEnter={e => e.target.style.color='var(--text-primary)'} onMouseLeave={e => e.target.style.color='var(--text-secondary)'}>Contacto</a>
+          <a href="#proyectos" className="font-body interactive text-secondary" style={{ fontSize: '16px', transition: 'color 0.2s' }} onMouseEnter={e => e.target.style.color='var(--text-primary)'} onMouseLeave={e => e.target.style.color='var(--text-secondary)'}>Proyectos</a>
+          <a href="#stack" className="font-body interactive text-secondary" style={{ fontSize: '16px', transition: 'color 0.2s' }} onMouseEnter={e => e.target.style.color='var(--text-primary)'} onMouseLeave={e => e.target.style.color='var(--text-secondary)'}>Stack</a>
+          <a href="#contacto" className="font-body interactive text-secondary" style={{ fontSize: '16px', transition: 'color 0.2s' }} onMouseEnter={e => e.target.style.color='var(--text-primary)'} onMouseLeave={e => e.target.style.color='var(--text-secondary)'}>Contacto</a>
         </div>
         <a href="#contacto" className="cta font-display interactive" style={{
           border: '1px solid var(--vertex-accent)',
           padding: '8px 16px',
           color: 'var(--vertex-accent)',
-          fontSize: '12px',
+          fontSize: '14px',
           letterSpacing: '1px',
           transition: 'all 0.2s',
           whiteSpace: 'nowrap'

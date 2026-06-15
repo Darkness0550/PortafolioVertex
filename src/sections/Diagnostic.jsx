@@ -46,7 +46,7 @@ export default function Diagnostic() {
   return (
     <section className="section-reveal" style={{ backgroundColor: 'var(--abyss)', padding: '120px 24px' }}>
       <div className="container" style={{ maxWidth: '900px' }}>
-        <h2 className="font-display text-primary" style={{ fontSize: '40px', textAlign: 'center', marginBottom: '64px' }}>
+        <h2 className="font-display text-primary" style={{ fontSize: '46px', textAlign: 'center', marginBottom: '64px' }}>
           ¿Qué estás construyendo?
         </h2>
         
@@ -69,8 +69,8 @@ export default function Diagnostic() {
                   border: selected === opt.id ? '1px solid var(--vertex-accent)' : '1px solid var(--border-glow)'
                 }}
               >
-                <span style={{ fontSize: '40px' }}>{opt.icon}</span>
-                <span className="font-code text-secondary" style={{ fontSize: '12px' }}>[ {opt.label} ]</span>
+                <span style={{ fontSize: '46px' }}>{opt.icon}</span>
+                <span className="font-code text-secondary" style={{ fontSize: '14px' }}>[ {opt.label} ]</span>
               </button>
             ))}
           </div>
@@ -98,7 +98,7 @@ export default function Diagnostic() {
               border: '1px solid var(--border-glow)'
             }}>
               <pre className="font-code text-secondary" style={{ 
-                fontSize: '13px', 
+                fontSize: '15px', 
                 whiteSpace: 'pre-wrap', 
                 lineHeight: '1.6',
                 marginBottom: '24px'
@@ -106,7 +106,7 @@ export default function Diagnostic() {
                 {typedText}
               </pre>
               
-              <a href="#contacto" className="interactive font-code text-accent" style={{ fontSize: '13px', borderBottom: '1px solid var(--vertex-accent)', paddingBottom: '2px' }}>
+              <a href="#contacto" className="interactive font-code text-accent" style={{ fontSize: '15px', borderBottom: '1px solid var(--vertex-accent)', paddingBottom: '2px' }}>
                 [Hablar sobre tu proyecto similar →]
               </a>
             </div>

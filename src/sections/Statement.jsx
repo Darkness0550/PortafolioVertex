@@ -15,7 +15,7 @@ export default function Statement() {
   return (
     <section ref={ref} className="section-reveal statement-section" style={{ padding: '120px 24px', display: 'flex', gap: '5%', flexWrap: 'wrap' }}>
       <div className="statement-left" style={{ flex: '1 1 55%', minWidth: '300px', marginBottom: '40px' }}>
-        <h2 className="font-display text-primary" style={{ fontSize: 'clamp(36px, 5vw, 56px)', lineHeight: '1.2' }}>
+        <h2 className="font-display text-primary" style={{ fontSize: 'clamp(41px, 5vw, 64px)', lineHeight: '1.2' }}>
           No vendemos<br />
           horas.<br />
           Entregamos <span style={{ position: 'relative', display: 'inline-block' }}>
@@ -44,15 +44,15 @@ export default function Statement() {
       </div>
       
       <div className="statement-right" style={{ flex: '1 1 40%', minWidth: '280px', paddingTop: '16px' }}>
-        <p className="font-body text-secondary" style={{ fontSize: '16px', lineHeight: '1.6', marginBottom: '32px' }}>
+        <p className="font-body text-secondary" style={{ fontSize: '18px', lineHeight: '1.6', marginBottom: '32px' }}>
           "Cada proyecto de Vertex comienza con una pregunta real: ¿qué problema de negocio resuelve este sistema? No empezamos a codear hasta tener la respuesta."
         </p>
         
         <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
           {['Diagnóstico técnico sin costo', 'Arquitectura antes de presupuesto', 'Deploy en infraestructura del cliente o la nuestra'].map((text, i) => (
             <div key={i} style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}>
-              <span className="font-code text-accent" style={{ fontSize: '13px', flexShrink: 0 }}>[ ✓ ]</span>
-              <span className="font-body text-primary" style={{ fontSize: '15px' }}>{text}</span>
+              <span className="font-code text-accent" style={{ fontSize: '15px', flexShrink: 0 }}>[ ✓ ]</span>
+              <span className="font-body text-primary" style={{ fontSize: '17px' }}>{text}</span>
             </div>
           ))}
         </div>

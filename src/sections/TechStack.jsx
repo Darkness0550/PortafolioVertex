@@ -65,7 +65,7 @@ export default function TechStack() {
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(130px, 1fr))', gap: '40px' }}>
           {techGroups.map((group, idx) => (
             <div key={idx}>
-              <div className="font-code text-primary" style={{ fontSize: '13px', marginBottom: '16px', borderBottom: '1px solid var(--border-glow)', paddingBottom: '8px' }}>
+              <div className="font-code text-primary" style={{ fontSize: '15px', marginBottom: '16px', borderBottom: '1px solid var(--border-glow)', paddingBottom: '8px' }}>
                 {group.title}
               </div>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
@@ -77,7 +77,7 @@ export default function TechStack() {
                     onMouseEnter={() => !isMobile && setHoveredTech(tech.replace(/\s+/g, '-'))}
                     onMouseLeave={() => !isMobile && setHoveredTech(null)}
                     style={{ 
-                      fontSize: '14px', 
+                      fontSize: '16px', 
                       color: hoveredTech === tech.replace(/\s+/g, '-') ? 'var(--text-primary)' : 'var(--text-secondary)',
                       opacity: hoveredTech ? (hoveredTech === tech.replace(/\s+/g, '-') ? 1 : 0.3) : 1,
                       transition: 'all 0.2s',

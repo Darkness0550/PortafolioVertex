@@ -17,21 +17,21 @@ export default function Projects() {
     <section id="proyectos" className="section-reveal projects-section">
       <div className="projects-bg"></div>
       <div className="container" style={{ position: 'relative', zIndex: 10, padding: '120px 24px' }}>
-        <h2 className="font-display text-primary" style={{ fontSize: '40px', marginBottom: '64px' }}>Proyectos en Producción</h2>
+        <h2 className="font-display text-primary" style={{ fontSize: '46px', marginBottom: '64px' }}>Proyectos en Producción</h2>
         
         <div className="projects-grid">
           {projects.map((p, i) => (
             <div key={i} className="project-card interactive">
               <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '16px' }}>
-                <div className="font-code text-accent" style={{ fontSize: '11px', display: 'flex', alignItems: 'center', gap: '6px' }}>
+                <div className="font-code text-accent" style={{ fontSize: '13px', display: 'flex', alignItems: 'center', gap: '6px' }}>
                   <div className="live-dot"></div> EN VIVO
                 </div>
-                <div className="font-code text-secondary" style={{ fontSize: '11px' }}>[{p.year}]</div>
+                <div className="font-code text-secondary" style={{ fontSize: '13px' }}>[{p.year}]</div>
               </div>
               
-              <h3 className="font-display text-primary" style={{ fontSize: '18px', marginBottom: '12px' }}>{p.name}</h3>
+              <h3 className="font-display text-primary" style={{ fontSize: '21px', marginBottom: '12px' }}>{p.name}</h3>
               
-              <p className="font-body text-secondary" style={{ fontSize: '13px', lineHeight: '1.5', marginBottom: '24px', flexGrow: 1, whiteSpace: 'pre-line' }}>
+              <p className="font-body text-secondary" style={{ fontSize: '15px', lineHeight: '1.5', marginBottom: '24px', flexGrow: 1, whiteSpace: 'pre-line' }}>
                 {p.desc}
               </p>
               
@@ -41,7 +41,7 @@ export default function Projects() {
                   if (!t) return null;
                   return (
                     <span key={idx} className="font-code" style={{
-                      fontSize: '11px',
+                      fontSize: '13px',
                       color: 'var(--vertex-accent)',
                       border: '1px solid rgba(3, 151, 163, 0.4)',
                       borderRadius: '16px',
@@ -55,7 +55,7 @@ export default function Projects() {
               </div>
               
               {p.link && (
-                <div className="font-code text-secondary" style={{ fontSize: '11px' }}>
+                <div className="font-code text-secondary" style={{ fontSize: '13px' }}>
                   [{p.link} ↗]
                 </div>
               )}

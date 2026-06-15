@@ -27,11 +27,11 @@
     padding-bottom: 60px;
   }
   .hero-title {
-    font-size: clamp(36px, 11vw, 64px) !important;
+    font-size: clamp(41px, 11vw, 74px) !important;
     line-height: 1.1 !important;
   }
   .hero-subtitle {
-    font-size: 15px !important;
+    font-size: 17px !important;
     max-width: 100% !important;
   }
   .hero-cta-row {
@@ -97,7 +97,7 @@
     gap: 10px !important;
   }
   .diagnostic-grid span:first-child {
-    font-size: 28px !important;
+    font-size: 32px !important;
   }
 }
 
@@ -150,7 +150,7 @@
     padding: 80px 16px !important;
   }
   .testimonial-quote-mark {
-    font-size: 80px !important;
+    font-size: 92px !important;
     top: -40px !important;
     left: -16px !important;
   }
@@ -183,7 +183,7 @@
     margin-top: 40px;
   }
   .cta-title {
-    font-size: clamp(36px, 10vw, 56px) !important;
+    font-size: clamp(41px, 10vw, 64px) !important;
     margin-bottom: 40px !important;
   }
   .input-group::after {

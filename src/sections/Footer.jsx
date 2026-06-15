@@ -1,30 +1,30 @@
 export default function Footer() {
   return (
-    <footer style={{ borderTop: '0.5px solid #272A30', backgroundColor: 'var(--abyss)', padding: '40px 24px' }}>
-      <div className="container" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '24px' }}>
+    <footer style={{ borderTop: '0.5px solid var(--border-glow)', backgroundColor: 'var(--abyss)', padding: '40px 24px' }}>
+      <div className="container footer-inner" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '24px' }}>
         
-        <div style={{ flex: '1', minWidth: '200px' }}>
+        <div style={{ flex: '1', minWidth: '160px' }}>
           <button 
             className="interactive"
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
             style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '8px', background: 'none', border: 'none', cursor: 'pointer', padding: 0 }}
           >
-            <img src="/src/assets/VertexLogo.png" alt="Vertex Logo" style={{ height: '24px' }} />
+            <img src="/src/assets/VertexLogo.png" alt="Vertex Logo" style={{ height: '20px' }} />
           </button>
-          <div className="font-code text-secondary" style={{ fontSize: '11px' }}>
+          <div className="font-code text-secondary" style={{ fontSize: '13px' }}>
             // building systems since 2017
           </div>
         </div>
 
-        <div style={{ flex: '1', display: 'flex', justifyContent: 'center', gap: '24px', minWidth: '200px' }}>
+        <div className="footer-nav" style={{ flex: '1', display: 'flex', justifyContent: 'center', gap: '24px' }}>
           {['Proyectos', 'Stack', 'Proceso', 'Contacto'].map(link => (
-            <a key={link} href={`#${link.toLowerCase()}`} className="font-body text-secondary interactive" style={{ fontSize: '13px', transition: 'color 0.2s' }} onMouseEnter={e => e.target.style.color = 'var(--text-primary)'} onMouseLeave={e => e.target.style.color = 'var(--text-secondary)'}>
+            <a key={link} href={`#${link.toLowerCase()}`} className="font-body text-secondary interactive" style={{ fontSize: '15px', transition: 'color 0.2s', whiteSpace: 'nowrap' }} onMouseEnter={e => e.target.style.color = 'var(--text-primary)'} onMouseLeave={e => e.target.style.color = 'var(--text-secondary)'}>
               {link}
             </a>
           ))}
         </div>
 
-        <div style={{ flex: '1', display: 'flex', justifyContent: 'flex-end', gap: '16px', minWidth: '200px' }}>
+        <div className="footer-social" style={{ flex: '1', display: 'flex', justifyContent: 'flex-end', gap: '16px', minWidth: '160px' }}>
           <a href="#" className="interactive text-secondary" style={{ transition: 'color 0.2s' }} onMouseEnter={e => e.currentTarget.style.color = 'var(--text-primary)'} onMouseLeave={e => e.currentTarget.style.color = 'var(--text-secondary)'}>
             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
           </a>
