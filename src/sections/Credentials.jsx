@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
+import { playTickSound, playDingSound } from '../utils/SoundFX';
 
 const CountUp = ({ end, duration = 2000, suffix = "" }) => {
   const [count, setCount] = useState(0);
@@ -11,12 +12,23 @@ const CountUp = ({ end, duration = 2000, suffix = "" }) => {
     let observer = new IntersectionObserver((entries) => {
       if (entries[0].isIntersecting) {
         const startTime = performance.now();
+        let lastTickTime = 0;
         const update = (currentTime) => {
           const elapsed = currentTime - startTime;
           const progress = Math.min(elapsed / duration, 1);
           const ease = progress === 1 ? 1 : 1 - Math.pow(2, -10 * progress);
           setCount(Math.floor(ease * end));
-          if (progress < 1) requestAnimationFrame(update);
+          
+          if (currentTime - lastTickTime > 50 && progress < 1) {
+            playTickSound();
+            lastTickTime = currentTime;
+          }
+
+          if (progress < 1) {
+            requestAnimationFrame(update);
+          } else {
+            playDingSound();
+          }
         };
         requestAnimationFrame(update);
         observer.disconnect();

@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect } from 'react';
+import { playHoverSound } from '../utils/SoundFX';
 
 const techGroups = [
   { title: 'FRONTEND', items: ['React', 'Next.js', 'WordPress', 'Flutter'] },
@@ -74,7 +75,12 @@ export default function TechStack() {
                     key={tech} 
                     id={`tech-${tech.replace(/\s+/g, '-')}`}
                     className="font-body interactive"
-                    onMouseEnter={() => !isMobile && setHoveredTech(tech.replace(/\s+/g, '-'))}
+                    onMouseEnter={() => {
+                      if (!isMobile) {
+                        setHoveredTech(tech.replace(/\s+/g, '-'));
+                        playHoverSound();
+                      }
+                    }}
                     onMouseLeave={() => !isMobile && setHoveredTech(null)}
                     style={{ 
                       fontSize: '15px', 
