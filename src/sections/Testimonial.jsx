@@ -1,3 +1,23 @@
+import Cliente1Logo from '../assets/images/Cliente1.png';
+import Cliente2Logo from '../assets/images/Cliente2.png';
+
+const clients = [
+  { name: 'Magnética', logo: Cliente1Logo },
+  { name: 'Trisagio Studios', logo: Cliente2Logo },
+];
+
+const logoHoverIn = (e) => {
+  e.currentTarget.style.opacity = '1';
+  e.currentTarget.style.filter = 'grayscale(0%) drop-shadow(0 0 12px rgba(3, 151, 163, 0.5))';
+  e.currentTarget.style.transform = 'scale(1.08) translateY(-4px)';
+};
+
+const logoHoverOut = (e) => {
+  e.currentTarget.style.opacity = '0.5';
+  e.currentTarget.style.filter = 'grayscale(100%) brightness(0.8)';
+  e.currentTarget.style.transform = 'scale(1) translateY(0)';
+};
+
 export default function Testimonial() {
   return (
     <section className="section-reveal testimonial-section" style={{ backgroundColor: 'var(--panel)', padding: '120px 24px', borderTop: '1px solid var(--border-glow)' }}>
@@ -48,7 +68,53 @@ export default function Testimonial() {
           ))}
         </div>
 
+        {/* Client logos */}
+        <div style={{ marginTop: '64px', width: '100%', borderTop: '1px solid rgba(255,255,255,0.05)', paddingTop: '48px' }}>
+          <div className="font-code text-secondary" style={{ fontSize: '13px', textAlign: 'center', marginBottom: '40px', textTransform: 'uppercase', letterSpacing: '3px' }}>
+            Confían en nosotros
+          </div>
+          <div style={{ 
+            display: 'flex', 
+            justifyContent: 'center', 
+            alignItems: 'center', 
+            gap: '60px', 
+            flexWrap: 'wrap' 
+          }}>
+            {clients.map((client, idx) => (
+              <div 
+                key={idx}
+                className="client-logo-interactive interactive"
+                style={{
+                  opacity: 0.5,
+                  filter: 'grayscale(100%) brightness(0.8)',
+                  transform: 'scale(1) translateY(0)',
+                  transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
+                  cursor: 'pointer',
+                  userSelect: 'none',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                }}
+                onMouseEnter={logoHoverIn}
+                onMouseLeave={logoHoverOut}
+              >
+                <img 
+                  src={client.logo} 
+                  alt={client.name} 
+                  style={{ 
+                    height: '50px', 
+                    width: 'auto', 
+                    objectFit: 'contain',
+                    maxWidth: '180px',
+                  }} 
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+
       </div>
     </section>
   );
 }
+
