@@ -1,5 +1,4 @@
 import TechStack from '../sections/TechStack';
-import CTA from '../sections/CTA';
 
 export default function StackPage() {
   return (
@@ -7,7 +6,6 @@ export default function StackPage() {
       <div style={{ flexGrow: 1 }}>
         <TechStack />
       </div>
-      <CTA />
     </div>
   );
 }

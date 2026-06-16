@@ -54,20 +54,21 @@ export default function Navbar() {
           <Link to="/stack" className="font-body interactive text-secondary" style={{ fontSize: '16px', transition: 'color 0.2s', textDecoration: 'none' }} onMouseEnter={e => e.target.style.color='var(--text-primary)'} onMouseLeave={e => e.target.style.color='var(--text-secondary)'}>Stack</Link>
           <Link to="/clientes" className="font-body interactive text-secondary" style={{ fontSize: '16px', transition: 'color 0.2s', textDecoration: 'none' }} onMouseEnter={e => e.target.style.color='var(--text-primary)'} onMouseLeave={e => e.target.style.color='var(--text-secondary)'}>Clientes</Link>
         </div>
-        <a href="#contacto" className="cta font-display interactive" style={{
+        <Link to="/contacto" className="cta font-display interactive" style={{
           border: '1px solid var(--vertex-accent)',
           padding: '8px 16px',
           color: 'var(--vertex-accent)',
           fontSize: '14px',
           letterSpacing: '1px',
           transition: 'all 0.2s',
-          whiteSpace: 'nowrap'
+          whiteSpace: 'nowrap',
+          textDecoration: 'none'
         }}
         onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = 'var(--vertex-accent)'; e.currentTarget.style.color = 'var(--abyss)'; }}
         onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = 'transparent'; e.currentTarget.style.color = 'var(--vertex-accent)'; }}
         >
           INICIAR PROYECTO
-        </a>
+        </Link>
       </div>
     </nav>
   );

@@ -1,6 +1,5 @@
 import Credentials from '../sections/Credentials';
 import Testimonial from '../sections/Testimonial';
-import CTA from '../sections/CTA';
 
 export default function ClientsPage() {
   return (
@@ -9,7 +8,6 @@ export default function ClientsPage() {
         <Testimonial />
         <Credentials />
       </div>
-      <CTA />
     </div>
   );
 }
