@@ -1,4 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
+import Cliente1Logo from '../assets/images/Cliente1.png';
+import Cliente2Logo from '../assets/images/Cliente2.png';
 
 const CountUp = ({ end, duration = 2000, suffix = "" }) => {
   const [count, setCount] = useState(0);
@@ -30,6 +32,23 @@ const CountUp = ({ end, duration = 2000, suffix = "" }) => {
   return <span ref={ref}>{count.toLocaleString()}{suffix}</span>;
 };
 
+const clients = [
+  { name: 'Magnética', logo: Cliente1Logo },
+  { name: 'Trisagio Studios', logo: Cliente2Logo },
+];
+
+const logoHoverIn = (e) => {
+  e.currentTarget.style.opacity = '1';
+  e.currentTarget.style.filter = 'grayscale(0%) drop-shadow(0 0 12px rgba(3, 151, 163, 0.5))';
+  e.currentTarget.style.transform = 'scale(1.08) translateY(-4px)';
+};
+
+const logoHoverOut = (e) => {
+  e.currentTarget.style.opacity = '0.5';
+  e.currentTarget.style.filter = 'grayscale(100%) brightness(0.8)';
+  e.currentTarget.style.transform = 'scale(1) translateY(0)';
+};
+
 export default function Credentials() {
   return (
     <section className="section-reveal" style={{ backgroundColor: 'var(--panel)', borderTop: '1px solid var(--border-glow)', borderBottom: '1px solid var(--border-glow)' }}>
@@ -59,41 +78,45 @@ export default function Credentials() {
         ))}
       </div>
 
-      <div className="container" style={{ padding: '40px 0', borderTop: '1px solid rgba(255,255,255,0.05)', marginTop: '20px' }}>
-        <div className="font-code text-secondary" style={{ fontSize: '14px', textAlign: 'center', marginBottom: '32px', textTransform: 'uppercase', letterSpacing: '2px' }}>
-          CONFÍAN EN NOSOTROS
+      <div className="container" style={{ padding: '48px 24px', borderTop: '1px solid rgba(255,255,255,0.05)', marginTop: '20px' }}>
+        <div className="font-code text-secondary" style={{ fontSize: '13px', textAlign: 'center', marginBottom: '40px', textTransform: 'uppercase', letterSpacing: '3px' }}>
+          Confían en nosotros
         </div>
-        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '40px', flexWrap: 'wrap' }}>
-          {['Pyramid', 'NexCore', 'DataFlow', 'VertexInc', 'CloudSync'].map((client, idx) => (
+        <div style={{ 
+          display: 'flex', 
+          justifyContent: 'center', 
+          alignItems: 'center', 
+          gap: '60px', 
+          flexWrap: 'wrap' 
+        }}>
+          {clients.map((client, idx) => (
             <div 
               key={idx}
-              className="client-logo-interactive"
+              className="client-logo-interactive interactive"
               style={{
-                fontSize: '24px',
-                fontWeight: 'bold',
-                fontFamily: 'var(--font-display)',
-                color: 'var(--text-primary)',
-                opacity: 0.4,
-                filter: 'grayscale(100%)',
-                transform: 'scale(1)',
-                transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                opacity: 0.5,
+                filter: 'grayscale(100%) brightness(0.8)',
+                transform: 'scale(1) translateY(0)',
+                transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
                 cursor: 'pointer',
-                userSelect: 'none'
+                userSelect: 'none',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
               }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.opacity = '1';
-                e.currentTarget.style.filter = 'grayscale(0%) drop-shadow(0 0 8px rgba(3, 151, 163, 0.6))';
-                e.currentTarget.style.transform = 'scale(1.1)';
-                e.currentTarget.style.color = 'var(--vertex-accent)';
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.opacity = '0.4';
-                e.currentTarget.style.filter = 'grayscale(100%)';
-                e.currentTarget.style.transform = 'scale(1)';
-                e.currentTarget.style.color = 'var(--text-primary)';
-              }}
+              onMouseEnter={logoHoverIn}
+              onMouseLeave={logoHoverOut}
             >
-              {client}
+              <img 
+                src={client.logo} 
+                alt={client.name} 
+                style={{ 
+                  height: '50px', 
+                  width: 'auto', 
+                  objectFit: 'contain',
+                  maxWidth: '180px',
+                }} 
+              />
             </div>
           ))}
         </div>
