@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 import VertexLogo from '../assets/VertexLogo.png';
 
 export default function Navbar() {
@@ -11,6 +12,17 @@ export default function Navbar() {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const handleLogoClick = () => {
+    if (location.pathname === '/') {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else {
+      navigate('/');
+    }
+  };
 
   return (
     <nav style={{
@@ -30,7 +42,7 @@ export default function Navbar() {
     }}>
       <button 
         className="navbar-logo interactive" 
-        onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+        onClick={handleLogoClick}
         style={{ display: 'flex', alignItems: 'center', gap: '8px', background: 'none', border: 'none', cursor: 'pointer', padding: 0 }}
       >
         <img src={VertexLogo} alt="Vertex Logo" style={{ height: '22px' }} />
@@ -38,9 +50,9 @@ export default function Navbar() {
       
       <div className="nav-links" style={{ display: 'flex', gap: '32px', alignItems: 'center' }}>
         <div className="nav-desktop-links" style={{ display: 'flex', gap: '24px' }}>
-          <a href="#proyectos" className="font-body interactive text-secondary" style={{ fontSize: '16px', transition: 'color 0.2s' }} onMouseEnter={e => e.target.style.color='var(--text-primary)'} onMouseLeave={e => e.target.style.color='var(--text-secondary)'}>Proyectos</a>
-          <a href="#stack" className="font-body interactive text-secondary" style={{ fontSize: '16px', transition: 'color 0.2s' }} onMouseEnter={e => e.target.style.color='var(--text-primary)'} onMouseLeave={e => e.target.style.color='var(--text-secondary)'}>Stack</a>
-          <a href="#contacto" className="font-body interactive text-secondary" style={{ fontSize: '16px', transition: 'color 0.2s' }} onMouseEnter={e => e.target.style.color='var(--text-primary)'} onMouseLeave={e => e.target.style.color='var(--text-secondary)'}>Contacto</a>
+          <Link to="/proyectos" className="font-body interactive text-secondary" style={{ fontSize: '16px', transition: 'color 0.2s', textDecoration: 'none' }} onMouseEnter={e => e.target.style.color='var(--text-primary)'} onMouseLeave={e => e.target.style.color='var(--text-secondary)'}>Proyectos</Link>
+          <Link to="/stack" className="font-body interactive text-secondary" style={{ fontSize: '16px', transition: 'color 0.2s', textDecoration: 'none' }} onMouseEnter={e => e.target.style.color='var(--text-primary)'} onMouseLeave={e => e.target.style.color='var(--text-secondary)'}>Stack</Link>
+          <Link to="/clientes" className="font-body interactive text-secondary" style={{ fontSize: '16px', transition: 'color 0.2s', textDecoration: 'none' }} onMouseEnter={e => e.target.style.color='var(--text-primary)'} onMouseLeave={e => e.target.style.color='var(--text-secondary)'}>Clientes</Link>
         </div>
         <a href="#contacto" className="cta font-display interactive" style={{
           border: '1px solid var(--vertex-accent)',

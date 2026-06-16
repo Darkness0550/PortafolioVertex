@@ -1,63 +1,22 @@
-import { useEffect } from 'react';
-import Navbar from './components/Navbar';
-import CustomCursor from './components/CustomCursor';
-import AmbientParticles from './components/AmbientParticles';
-import SmoothScroll from './components/SmoothScroll';
-import ScrollIndicator from './components/ScrollIndicator';
-
-import Hero from './sections/Hero';
-import Credentials from './sections/Credentials';
-import Statement from './sections/Statement';
-import Projects from './sections/Projects';
-import Diagnostic from './sections/Diagnostic';
-import TechStack from './sections/TechStack';
-import Process from './sections/Process';
-import Testimonial from './sections/Testimonial';
-import CTA from './sections/CTA';
-import Footer from './sections/Footer';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Layout from './components/Layout';
+import Home from './pages/Home';
+import ProjectsPage from './pages/ProjectsPage';
+import StackPage from './pages/StackPage';
+import ClientsPage from './pages/ClientsPage';
 
 function App() {
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('is-visible');
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.15 }
-    );
-
-    const elements = document.querySelectorAll('.section-reveal');
-    elements.forEach((el) => observer.observe(el));
-
-    return () => observer.disconnect();
-  }, []);
-
   return (
-    <SmoothScroll>
-      <CustomCursor />
-      <AmbientParticles />
-      <ScrollIndicator />
-      
-      <Navbar />
-      
-      <main>
-        <Hero />
-        <Credentials />
-        <Statement />
-        <Projects />
-        <Diagnostic />
-        <TechStack />
-        <Process />
-        <Testimonial />
-        <CTA />
-      </main>
-      
-      <Footer />
-    </SmoothScroll>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path="proyectos" element={<ProjectsPage />} />
+          <Route path="stack" element={<StackPage />} />
+          <Route path="clientes" element={<ClientsPage />} />
+        </Route>
+      </Routes>
+    </Router>
   );
 }
 
