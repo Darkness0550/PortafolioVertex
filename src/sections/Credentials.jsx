@@ -33,7 +33,7 @@ const CountUp = ({ end, duration = 2000, suffix = "" }) => {
 export default function Credentials() {
   return (
     <section className="section-reveal" style={{ backgroundColor: 'var(--panel)', borderTop: '1px solid var(--border-glow)', borderBottom: '1px solid var(--border-glow)' }}>
-      <div className="container credentials-row" style={{ display: 'flex', height: '120px' }}>
+      <div className="container credentials-row" style={{ display: 'flex', height: '120px', flexWrap: 'wrap' }}>
         {[
           { num: 50, suffix: '+', label: 'Proyectos' },
           { num: 9300, suffix: '+', label: 'Usuarios activos' },
@@ -41,7 +41,7 @@ export default function Credentials() {
           { num: 8, suffix: '', label: 'Sistemas vivos' }
         ].map((item, i) => (
           <div key={i} className="credentials-item" style={{
-            flex: 1,
+            flex: '1 1 200px',
             display: 'flex',
             flexDirection: 'column',
             justifyContent: 'center',
@@ -57,6 +57,46 @@ export default function Credentials() {
             </div>
           </div>
         ))}
+      </div>
+
+      <div className="container" style={{ padding: '40px 0', borderTop: '1px solid rgba(255,255,255,0.05)', marginTop: '20px' }}>
+        <div className="font-code text-secondary" style={{ fontSize: '14px', textAlign: 'center', marginBottom: '32px', textTransform: 'uppercase', letterSpacing: '2px' }}>
+          CONFÍAN EN NOSOTROS
+        </div>
+        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '40px', flexWrap: 'wrap' }}>
+          {['Pyramid', 'NexCore', 'DataFlow', 'VertexInc', 'CloudSync'].map((client, idx) => (
+            <div 
+              key={idx}
+              className="client-logo-interactive"
+              style={{
+                fontSize: '24px',
+                fontWeight: 'bold',
+                fontFamily: 'var(--font-display)',
+                color: 'var(--text-primary)',
+                opacity: 0.4,
+                filter: 'grayscale(100%)',
+                transform: 'scale(1)',
+                transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                cursor: 'pointer',
+                userSelect: 'none'
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.opacity = '1';
+                e.currentTarget.style.filter = 'grayscale(0%) drop-shadow(0 0 8px rgba(3, 151, 163, 0.6))';
+                e.currentTarget.style.transform = 'scale(1.1)';
+                e.currentTarget.style.color = 'var(--vertex-accent)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.opacity = '0.4';
+                e.currentTarget.style.filter = 'grayscale(100%)';
+                e.currentTarget.style.transform = 'scale(1)';
+                e.currentTarget.style.color = 'var(--text-primary)';
+              }}
+            >
+              {client}
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );

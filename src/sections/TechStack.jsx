@@ -77,16 +77,29 @@ export default function TechStack() {
                     onMouseEnter={() => !isMobile && setHoveredTech(tech.replace(/\s+/g, '-'))}
                     onMouseLeave={() => !isMobile && setHoveredTech(null)}
                     style={{ 
-                      fontSize: '16px', 
-                      color: hoveredTech === tech.replace(/\s+/g, '-') ? 'var(--vertex-accent)' : 'var(--text-secondary)',
-                      textShadow: hoveredTech === tech.replace(/\s+/g, '-') ? '0 0 12px rgba(3, 151, 163, 0.8)' : 'none',
-                      opacity: hoveredTech ? (hoveredTech === tech.replace(/\s+/g, '-') ? 1 : 0.3) : 1,
-                      transform: hoveredTech === tech.replace(/\s+/g, '-') ? 'translateX(8px)' : 'none',
+                      fontSize: '15px', 
+                      color: hoveredTech === tech.replace(/\s+/g, '-') ? 'var(--abyss)' : 'var(--text-secondary)',
+                      backgroundColor: hoveredTech === tech.replace(/\s+/g, '-') ? 'var(--vertex-accent)' : 'rgba(3, 151, 163, 0.05)',
+                      border: `1px solid ${hoveredTech === tech.replace(/\s+/g, '-') ? 'var(--vertex-accent)' : 'rgba(3, 151, 163, 0.2)'}`,
+                      borderRadius: '6px',
+                      padding: '10px 16px',
+                      boxShadow: hoveredTech === tech.replace(/\s+/g, '-') ? '0 0 20px rgba(3, 151, 163, 0.6)' : 'none',
+                      opacity: hoveredTech ? (hoveredTech === tech.replace(/\s+/g, '-') ? 1 : 0.4) : 1,
+                      transform: hoveredTech === tech.replace(/\s+/g, '-') ? 'scale(1.05) translateX(8px)' : 'scale(1)',
                       transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
-                      cursor: 'pointer'
+                      cursor: 'pointer',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'space-between'
                     }}
                   >
-                    {tech}
+                    <span>{tech}</span>
+                    <span style={{ 
+                      width: '6px', height: '6px', borderRadius: '50%', 
+                      backgroundColor: hoveredTech === tech.replace(/\s+/g, '-') ? 'var(--abyss)' : 'var(--vertex-accent)',
+                      opacity: hoveredTech === tech.replace(/\s+/g, '-') ? 1 : 0.3,
+                      transition: 'all 0.3s'
+                    }}></span>
                   </div>
                 ))}
               </div>

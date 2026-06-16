@@ -34,7 +34,7 @@ export default function Navbar() {
       display: 'flex',
       justifyContent: 'space-between',
       alignItems: 'center',
-      padding: '20px 5%',
+      padding: '24px 5%',
       transition: 'background-color 0.3s, backdrop-filter 0.3s',
       backgroundColor: scrolled ? 'rgba(3, 4, 10, 0.85)' : 'transparent',
       backdropFilter: scrolled ? 'blur(8px)' : 'none',
@@ -45,20 +45,21 @@ export default function Navbar() {
         onClick={handleLogoClick}
         style={{ display: 'flex', alignItems: 'center', gap: '8px', background: 'none', border: 'none', cursor: 'pointer', padding: 0 }}
       >
-        <img src={VertexLogo} alt="Vertex Logo" style={{ height: '22px' }} />
+        <img src={VertexLogo} alt="Vertex Logo" style={{ height: '32px' }} />
       </button>
       
-      <div className="nav-links" style={{ display: 'flex', gap: '32px', alignItems: 'center' }}>
-        <div className="nav-desktop-links" style={{ display: 'flex', gap: '24px' }}>
-          <Link to="/proyectos" className="font-body interactive text-secondary" style={{ fontSize: '16px', transition: 'color 0.2s', textDecoration: 'none' }} onMouseEnter={e => e.target.style.color='var(--text-primary)'} onMouseLeave={e => e.target.style.color='var(--text-secondary)'}>Proyectos</Link>
-          <Link to="/stack" className="font-body interactive text-secondary" style={{ fontSize: '16px', transition: 'color 0.2s', textDecoration: 'none' }} onMouseEnter={e => e.target.style.color='var(--text-primary)'} onMouseLeave={e => e.target.style.color='var(--text-secondary)'}>Stack</Link>
-          <Link to="/clientes" className="font-body interactive text-secondary" style={{ fontSize: '16px', transition: 'color 0.2s', textDecoration: 'none' }} onMouseEnter={e => e.target.style.color='var(--text-primary)'} onMouseLeave={e => e.target.style.color='var(--text-secondary)'}>Clientes</Link>
+      <div className="nav-links" style={{ display: 'flex', gap: '36px', alignItems: 'center' }}>
+        <div className="nav-desktop-links" style={{ display: 'flex', gap: '32px' }}>
+          <Link to="/proyectos" className="font-body interactive text-secondary" style={{ fontSize: '18px', transition: 'color 0.2s', textDecoration: 'none' }} onMouseEnter={e => e.target.style.color='var(--text-primary)'} onMouseLeave={e => e.target.style.color='var(--text-secondary)'}>Proyectos</Link>
+          <Link to="/stack" className="font-body interactive text-secondary" style={{ fontSize: '18px', transition: 'color 0.2s', textDecoration: 'none' }} onMouseEnter={e => e.target.style.color='var(--text-primary)'} onMouseLeave={e => e.target.style.color='var(--text-secondary)'}>Stack</Link>
+          <Link to="/clientes" className="font-body interactive text-secondary" style={{ fontSize: '18px', transition: 'color 0.2s', textDecoration: 'none' }} onMouseEnter={e => e.target.style.color='var(--text-primary)'} onMouseLeave={e => e.target.style.color='var(--text-secondary)'}>Clientes</Link>
+          <Link to="/contacto" className="font-body interactive text-secondary" style={{ fontSize: '18px', transition: 'color 0.2s', textDecoration: 'none' }} onMouseEnter={e => e.target.style.color='var(--text-primary)'} onMouseLeave={e => e.target.style.color='var(--text-secondary)'}>Contacto</Link>
         </div>
         <Link to="/contacto" className="cta font-display interactive" style={{
           border: '1px solid var(--vertex-accent)',
-          padding: '8px 16px',
+          padding: '10px 20px',
           color: 'var(--vertex-accent)',
-          fontSize: '14px',
+          fontSize: '16px',
           letterSpacing: '1px',
           transition: 'all 0.2s',
           whiteSpace: 'nowrap',
