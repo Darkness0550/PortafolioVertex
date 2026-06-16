@@ -78,9 +78,12 @@ export default function TechStack() {
                     onMouseLeave={() => !isMobile && setHoveredTech(null)}
                     style={{ 
                       fontSize: '16px', 
-                      color: hoveredTech === tech.replace(/\s+/g, '-') ? 'var(--text-primary)' : 'var(--text-secondary)',
+                      color: hoveredTech === tech.replace(/\s+/g, '-') ? 'var(--vertex-accent)' : 'var(--text-secondary)',
+                      textShadow: hoveredTech === tech.replace(/\s+/g, '-') ? '0 0 12px rgba(3, 151, 163, 0.8)' : 'none',
                       opacity: hoveredTech ? (hoveredTech === tech.replace(/\s+/g, '-') ? 1 : 0.3) : 1,
-                      transition: 'all 0.2s',
+                      transform: hoveredTech === tech.replace(/\s+/g, '-') ? 'translateX(8px)' : 'none',
+                      transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                      cursor: 'pointer'
                     }}
                   >
                     {tech}
@@ -99,10 +102,11 @@ export default function TechStack() {
               <line 
                 x1={line.x1} y1={line.y1} x2={line.x2} y2={line.y2} 
                 stroke="var(--vertex-accent)" 
-                strokeWidth="1" 
-                opacity="0.4" 
+                strokeWidth="2" 
+                opacity="0.6" 
+                style={{ filter: 'drop-shadow(0 0 4px rgba(3, 151, 163, 0.5))' }}
               />
-              <circle cx={line.x2} cy={line.y2} r="3" fill="var(--vertex-accent)" />
+              <circle cx={line.x2} cy={line.y2} r="4" fill="var(--vertex-accent)" style={{ filter: 'drop-shadow(0 0 6px rgba(3, 151, 163, 0.8))' }} />
             </g>
           ))}
         </svg>

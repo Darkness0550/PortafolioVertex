@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import VertexLogo from '../assets/VertexLogo.png';
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -32,7 +33,7 @@ export default function Navbar() {
         onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
         style={{ display: 'flex', alignItems: 'center', gap: '8px', background: 'none', border: 'none', cursor: 'pointer', padding: 0 }}
       >
-        <img src="/src/assets/VertexLogo.png" alt="Vertex Logo" style={{ height: '22px' }} />
+        <img src={VertexLogo} alt="Vertex Logo" style={{ height: '22px' }} />
       </button>
       
       <div className="nav-links" style={{ display: 'flex', gap: '32px', alignItems: 'center' }}>
