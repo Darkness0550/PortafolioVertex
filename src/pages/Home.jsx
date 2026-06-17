@@ -2,6 +2,7 @@ import Hero from '../sections/Hero';
 import Credentials from '../sections/Credentials';
 import Statement from '../sections/Statement';
 import Projects from '../sections/Projects';
+import Landings from '../sections/Landings';
 import Diagnostic from '../sections/Diagnostic';
 import TechStack from '../sections/TechStack';
 import Process from '../sections/Process';
@@ -15,6 +16,7 @@ export default function Home() {
       <Credentials />
       <Statement />
       <Projects />
+      <Landings />
       <Diagnostic />
       <TechStack />
       <Process />
