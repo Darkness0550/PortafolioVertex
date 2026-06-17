@@ -3,6 +3,7 @@ import { useEffect, useRef } from 'react';
 import Layout from './components/Layout';
 import Home from './pages/Home';
 import ProjectsPage from './pages/ProjectsPage';
+import LandingsPage from './pages/LandingsPage';
 import StackPage from './pages/StackPage';
 import ClientsPage from './pages/ClientsPage';
 import ContactPage from './pages/ContactPage';
@@ -34,6 +35,7 @@ function App() {
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
           <Route path="proyectos" element={<ProjectsPage />} />
+          <Route path="landings" element={<LandingsPage />} />
           <Route path="stack" element={<StackPage />} />
           <Route path="clientes" element={<ClientsPage />} />
           <Route path="contacto" element={<ContactPage />} />
