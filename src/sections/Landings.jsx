@@ -10,6 +10,7 @@ const landings = [
     color: '#00C8FF',
     emoji: '⚡',
     badge: 'E-COMMERCE',
+    link: null,
     video: 'https://www.w3schools.com/html/mov_bbb.mp4',
   },
   {
@@ -20,6 +21,7 @@ const landings = [
     color: '#FF6B35',
     emoji: '🏗️',
     badge: 'CORPORATIVO',
+    link: 'https://losandes.ing/',
     video: 'https://www.w3schools.com/html/mov_bbb.mp4',
   },
   {
@@ -30,6 +32,7 @@ const landings = [
     color: '#A259FF',
     emoji: '🔺',
     badge: 'INDUSTRIA',
+    link: 'https://pyramid.com.pe/',
     video: 'https://www.w3schools.com/html/mov_bbb.mp4',
   },
 ];
@@ -96,7 +99,11 @@ function LandingCard({ item, index }) {
           <h3 className="lc-name">{item.name}</h3>
           <p className="lc-tagline" style={{ color: item.color }}>{item.tagline}</p>
           <p className="lc-desc">{item.desc}</p>
-          <span className="lc-cta" style={{ color: item.color }}>VER PROYECTO ↗</span>
+          {item.link ? (
+            <a href={item.link} target="_blank" rel="noreferrer" className="lc-cta" style={{ color: item.color, textDecoration: 'none' }}>VER PROYECTO ↗</a>
+          ) : (
+            <span className="lc-cta" style={{ color: item.color }}>PRÓXIMAMENTE</span>
+          )}
         </div>
       </div>
     </div>
