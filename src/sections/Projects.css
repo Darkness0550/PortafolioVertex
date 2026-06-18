@@ -23,8 +23,19 @@
   gap: 24px;
 }
 
+.projects-grid-home {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+@media (max-width: 1024px) {
+  .projects-grid-home {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 @media (max-width: 768px) {
-  .projects-grid {
+  .projects-grid,
+  .projects-grid-home {
     grid-template-columns: 1fr;
   }
 }

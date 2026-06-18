@@ -31,8 +31,8 @@ export default function Projects() {
       <div className="container" style={{ position: 'relative', zIndex: 10, padding: '120px 24px' }}>
         <h2 className="font-display text-primary" style={{ fontSize: '46px', marginBottom: '64px' }}>Proyectos en Producción</h2>
         
-        <div className="projects-grid">
-          {projects.slice(0, isStandalone ? projects.length : 4).map((p, i) => (
+        <div className={`projects-grid ${!isStandalone ? 'projects-grid-home' : ''}`}>
+          {projects.slice(0, isStandalone ? projects.length : 3).map((p, i) => (
             <div 
               key={i} 
               className={`project-card-wrapper ${flippedId === i ? 'flipped' : ''}`}
