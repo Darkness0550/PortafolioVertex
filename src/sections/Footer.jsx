@@ -1,9 +1,11 @@
 import VertexLogo from '../assets/VertexLogo.png';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
+import { useState } from 'react';
 
 export default function Footer() {
   const navigate = useNavigate();
   const location = useLocation();
+  const [modalType, setModalType] = useState(null);
 
   const handleLogoClick = () => {
     if (location.pathname === '/') {
@@ -13,7 +15,10 @@ export default function Footer() {
     }
   };
 
+  const closeModal = () => setModalType(null);
+
   return (
+    <>
     <footer style={{ borderTop: '0.5px solid var(--border-glow)', backgroundColor: 'var(--abyss)', padding: '40px 24px' }}>
       <div className="container footer-inner" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '24px' }}>
         
@@ -51,13 +56,45 @@ export default function Footer() {
       </div>
       
       <div className="container" style={{ marginTop: '32px', paddingTop: '24px', borderTop: '1px solid rgba(255,255,255,0.05)', display: 'flex', justifyContent: 'center', gap: '24px', flexWrap: 'wrap' }}>
-        <a href="#terminos" className="font-body text-secondary interactive" style={{ fontSize: '13px', transition: 'color 0.2s' }} onMouseEnter={e => e.target.style.color = 'var(--text-primary)'} onMouseLeave={e => e.target.style.color = 'var(--text-secondary)'}>
+        <button onClick={() => setModalType('terms')} className="font-body text-secondary interactive" style={{ background: 'none', border: 'none', cursor: 'pointer', fontSize: '13px', transition: 'color 0.2s', padding: 0 }} onMouseEnter={e => e.target.style.color = 'var(--text-primary)'} onMouseLeave={e => e.target.style.color = 'var(--text-secondary)'}>
           Términos y Condiciones
-        </a>
-        <a href="#privacidad" className="font-body text-secondary interactive" style={{ fontSize: '13px', transition: 'color 0.2s' }} onMouseEnter={e => e.target.style.color = 'var(--text-primary)'} onMouseLeave={e => e.target.style.color = 'var(--text-secondary)'}>
+        </button>
+        <button onClick={() => setModalType('privacy')} className="font-body text-secondary interactive" style={{ background: 'none', border: 'none', cursor: 'pointer', fontSize: '13px', transition: 'color 0.2s', padding: 0 }} onMouseEnter={e => e.target.style.color = 'var(--text-primary)'} onMouseLeave={e => e.target.style.color = 'var(--text-secondary)'}>
           Políticas de Privacidad
-        </a>
+        </button>
       </div>
     </footer>
+
+      {/* Modals */}
+      {modalType && (
+        <div style={{
+          position: 'fixed', inset: 0, zIndex: 9999, display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '24px'
+        }}>
+          <div onClick={closeModal} style={{ position: 'absolute', inset: 0, background: 'rgba(3, 4, 10, 0.85)', backdropFilter: 'blur(8px)' }} />
+          
+          <div className="panel" style={{
+            position: 'relative', zIndex: 1, width: '100%', maxWidth: '600px', maxHeight: '80vh', overflowY: 'auto',
+            background: 'var(--abyss)', border: '1px solid var(--border-glow)', borderRadius: '16px', padding: '32px'
+          }}>
+            <button onClick={closeModal} className="interactive font-code" style={{
+              position: 'absolute', top: '24px', right: '24px', background: 'none', border: 'none', color: 'var(--text-secondary)', cursor: 'pointer', fontSize: '14px'
+            }}>
+              [ Cerrar ✕ ]
+            </button>
+            
+            <h3 className="font-display text-primary" style={{ fontSize: '28px', marginBottom: '24px', color: 'var(--vertex-accent)' }}>
+              {modalType === 'terms' ? 'Términos y Condiciones' : 'Políticas de Privacidad'}
+            </h3>
+            
+            <div className="font-body text-secondary" style={{ fontSize: '15px', lineHeight: '1.6', display: 'flex', flexDirection: 'column', gap: '16px' }}>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+              <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+              <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+              <p><em>(Reemplaza este texto con tus políticas legales reales).</em></p>
+            </div>
+          </div>
+        </div>
+      )}
+    </>
   );
 }

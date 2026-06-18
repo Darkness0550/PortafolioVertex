@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, Link } from 'react-router-dom';
 import './Projects.css';
 
 const projects = [
@@ -32,7 +32,7 @@ export default function Projects() {
         <h2 className="font-display text-primary" style={{ fontSize: '46px', marginBottom: '64px' }}>Proyectos en Producción</h2>
         
         <div className="projects-grid">
-          {projects.map((p, i) => (
+          {projects.slice(0, isStandalone ? projects.length : 3).map((p, i) => (
             <div 
               key={i} 
               className={`project-card-wrapper ${flippedId === i ? 'flipped' : ''}`}
@@ -139,6 +139,23 @@ export default function Projects() {
             </div>
           ))}
         </div>
+
+        {!isStandalone && (
+          <div style={{ marginTop: '64px', display: 'flex', justifyContent: 'center' }}>
+            <Link to="/proyectos" className="interactive panel" style={{ 
+              padding: '16px 32px', 
+              border: '1px solid var(--vertex-accent)', 
+              borderRadius: '8px', 
+              textDecoration: 'none', 
+              color: 'var(--vertex-accent)',
+              fontFamily: 'var(--font-code)',
+              fontSize: '14px',
+              transition: 'all 0.3s' 
+            }}>
+              [ Ver todos los proyectos → ]
+            </Link>
+          </div>
+        )}
       </div>
     </section>
   );
