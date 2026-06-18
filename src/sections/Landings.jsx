@@ -37,6 +37,59 @@ const landings = [
   },
 ];
 
+const processSteps = [
+  {
+    id: '01',
+    title: 'Preventa & Propuesta',
+    desc: 'Discovery call • brief del cliente • estimación • propuesta comercial • contrato',
+  },
+  {
+    id: '02',
+    title: 'Diagnóstico',
+    desc: 'Workshop técnico • mapeamos tu proceso real',
+    time: '3–5 días',
+  },
+  {
+    id: '03',
+    title: 'Arquitectura',
+    desc: 'Stack, DB y UX antes de una sola línea de código',
+    time: '5–10 días',
+    stacks: [
+      { name: 'Next.js', focus: 'Rendimiento & SEO', benefit: 'Cargas ultra rápidas y posicionamiento óptimo.' },
+      { name: 'React', focus: 'Interactividad', benefit: 'Interfaces de usuario dinámicas y responsivas.' },
+      { name: 'Tailwind', focus: 'Diseño a medida', benefit: 'Estilos consistentes y UI moderna.' },
+      { name: 'Node.js', focus: 'Escalabilidad', benefit: 'Backend robusto y operaciones de alto tráfico.' }
+    ],
+  },
+  {
+    id: '04',
+    title: 'Construcción',
+    desc: 'Sprints de 2 semanas con entrega demostrable',
+    time: '4–16 semanas',
+  },
+  {
+    id: '05',
+    title: 'QA & Testing',
+    desc: 'Pruebas funcionales • UAT con cliente • corrección de bugs • staging',
+  },
+  {
+    id: '06',
+    title: 'Lanzamiento',
+    desc: 'Deploy + docs + 30 días soporte acotado',
+    time: 'Continuo',
+  },
+  {
+    id: '07',
+    title: 'Mantenimiento & Evolución',
+    desc: 'Plan de mantenimiento • SLA • nuevas features • retainer mensual',
+  },
+  {
+    id: '08',
+    title: 'Cierre & Handoff',
+    desc: 'Capacitación al cliente • entrega de repos • documentación final • acta de cierre',
+  },
+];
+
 /* ── Card with IntersectionObserver entrance ── */
 function LandingCard({ item, index }) {
   const ref = useRef(null);
@@ -109,6 +162,60 @@ function LandingCard({ item, index }) {
     </div>
   );
 }
+/* ── Process Card with IntersectionObserver entrance ── */
+function ProcessCard({ step, index }) {
+  const ref = useRef(null);
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const obs = new IntersectionObserver(
+      ([entry]) => { if (entry.isIntersecting) setVisible(true); },
+      { threshold: 0.12 }
+    );
+    obs.observe(el);
+    return () => obs.disconnect();
+  }, []);
+
+  return (
+    <div
+      ref={ref}
+      className={`lp-card-wrapper ${visible ? 'lp-card-in' : ''}`}
+      style={{ '--d': `${index * 120}ms` }}
+    >
+      <div className="lp-number-col">
+        <div className="lp-number-box">{step.id}</div>
+        {index < processSteps.length - 1 && <div className="lp-line" />}
+      </div>
+      
+      <div className="lp-card">
+        <div className="lp-glow" />
+        <div className="lp-body">
+          <div className="lp-header">
+            <h3 className="lp-title">{step.title}</h3>
+            {step.time && <span className="lp-time">⏱ {step.time}</span>}
+          </div>
+          <p className="lp-desc">{step.desc}</p>
+          
+          {step.stacks && (
+            <div className="lp-stacks">
+              {step.stacks.map((stk) => (
+                <div key={stk.name} className="lp-stack-item">
+                  <span className="lp-stack-name">{stk.name}</span>
+                  <div className="lp-stack-tooltip">
+                    <span className="lp-tooltip-focus">{stk.focus}</span>
+                    <span className="lp-tooltip-benefit">{stk.benefit}</span>
+                  </div>
+                </div>
+              ))}
+            </div>
+          )}
+        </div>
+      </div>
+    </div>
+  );
+}
 
 /* ── Main section ── */
 export default function Landings() {
@@ -171,6 +278,25 @@ export default function Landings() {
         <div className="lc-grid">
           {landings.map((item, i) => (
             <LandingCard key={item.id} item={item} index={i} />
+          ))}
+        </div>
+      </div>
+
+      {/* ── PROCESS ── */}
+      <div className="lp-section" id="proceso">
+        <div className="ls-head">
+          <p className="ls-eyebrow">— NUESTRO MÉTODO</p>
+          <h2 className="ls-title">
+            El <span className="ls-title-hl">proceso ideal</span>
+          </h2>
+          <p className="lh-sub" style={{ marginTop: '24px', opacity: 1, animation: 'none' }}>
+            Desarrollo transparente, estructurado y sin sorpresas.
+          </p>
+        </div>
+
+        <div className="lp-timeline">
+          {processSteps.map((step, i) => (
+            <ProcessCard key={step.id} step={step} index={i} />
           ))}
         </div>
       </div>
