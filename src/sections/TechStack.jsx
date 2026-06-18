@@ -71,7 +71,12 @@ export default function TechStack() {
       const elRect = el.getBoundingClientRect();
       const elX = elRect.left - sectionRect.left;
       const elY = elRect.top - sectionRect.top + elRect.height / 2;
-      setLines([{ x1: elX, y1: elY, x2: sphereCenterX + 50, y2: sphereCenterY }]);
+      
+      // Random endpoint on the right hemisphere, avoiding the central tooltip
+      const randomOffsetX = 160 + Math.random() * 80; // 160px to 240px to the right of center
+      const randomOffsetY = (Math.random() - 0.5) * 250; // -125px to +125px from center Y
+      
+      setLines([{ x1: elX, y1: elY, x2: sphereCenterX + randomOffsetX, y2: sphereCenterY + randomOffsetY }]);
     }
   }, [hoveredTech, isMobile]);
 
