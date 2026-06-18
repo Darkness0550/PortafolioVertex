@@ -2,10 +2,25 @@ import { useEffect, useRef, useState } from 'react';
 import './Process.css';
 
 const steps = [
+  { id: '00', title: 'Preventa & Propuesta', desc: 'Discovery call • brief del cliente • estimación • propuesta comercial • contrato' },
   { id: '01', title: 'Diagnóstico', desc: 'Workshop técnico. Mapeamos tu proceso real.', time: '3–5 días' },
-  { id: '02', title: 'Arquitectura', desc: 'Stack, DB y UX antes de una sola línea de código.', time: '5–10 días' },
+  { 
+    id: '02', 
+    title: 'Arquitectura', 
+    desc: 'Stack, DB y UX antes de una sola línea de código.', 
+    time: '5–10 días',
+    stacks: [
+      { name: 'Next.js', focus: 'Rendimiento & SEO', benefit: 'Cargas instantáneas y posicionamiento óptimo.' },
+      { name: 'React', focus: 'Interactividad', benefit: 'Interfaces de usuario dinámicas y altamente responsivas.' },
+      { name: 'Tailwind', focus: 'Diseño a medida', benefit: 'Estilos consistentes y desarrollo ultra rápido.' },
+      { name: 'Node.js', focus: 'Escalabilidad', benefit: 'Backend robusto para operaciones de alto tráfico.' }
+    ]
+  },
   { id: '03', title: 'Construcción', desc: 'Sprints de 2 semanas con entrega demostrable.', time: '4–16 semanas' },
-  { id: '04', title: 'Lanzamiento', desc: 'Deploy + docs + 30 días soporte incluido.', time: 'Continuo' }
+  { id: '03.5', title: 'QA & Testing', desc: 'Pruebas funcionales • UAT con cliente • corrección de bugs • staging' },
+  { id: '04', title: 'Lanzamiento', desc: 'Deploy + docs + 30 días soporte incluido.', time: 'Continuo' },
+  { id: '05', title: 'Mantenimiento & Evolución', desc: 'Plan de mantenimiento • SLA • nuevas features • retainer mensual' },
+  { id: '06', title: 'Cierre & Handoff', desc: 'Capacitación al cliente • entrega de repos • documentación final • acta de cierre' }
 ];
 
 export default function Process() {
@@ -65,9 +80,25 @@ export default function Process() {
                   {step.desc}
                 </p>
                 
-                <div className="font-code text-primary" style={{ fontSize: '14px', opacity: 0.8 }}>
-                  ⏱ {step.time}
-                </div>
+                {step.time && (
+                  <div className="font-code text-primary" style={{ fontSize: '14px', opacity: 0.8 }}>
+                    ⏱ {step.time}
+                  </div>
+                )}
+
+                {step.stacks && (
+                  <div className="process-stacks" style={{ display: 'flex', flexWrap: 'wrap', gap: '10px', marginTop: '20px' }}>
+                    {step.stacks.map((stk) => (
+                      <div key={stk.name} className="process-stack-item">
+                        <span className="process-stack-name font-code" style={{ fontSize: '13px' }}>{stk.name}</span>
+                        <div className="process-stack-tooltip">
+                          <span className="process-tooltip-focus font-display">{stk.focus}</span>
+                          <span className="process-tooltip-benefit font-body">{stk.benefit}</span>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                )}
               </div>
             ))}
           </div>
