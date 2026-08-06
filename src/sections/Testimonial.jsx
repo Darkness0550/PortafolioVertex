@@ -1,9 +1,17 @@
 import Cliente1Logo from '../assets/images/Cliente1.png';
 import Cliente2Logo from '../assets/images/Cliente2.png';
+import Cliente3Logo from '../assets/images/Cliente3.png';
+import Cliente4Logo from '../assets/images/Cliente4.png';
+import Cliente5Logo from '../assets/images/Cliente5.png';
+import Cliente6Logo from '../assets/images/Cliente6.png';
 
 const clients = [
-  { name: 'Magnética', logo: Cliente1Logo },
-  { name: 'Trisagio Studios', logo: Cliente2Logo },
+  { name: 'Cliente 1', logo: Cliente1Logo },
+  { name: 'Cliente 2', logo: Cliente2Logo },
+  { name: 'Cliente 3', logo: Cliente3Logo },
+  { name: 'Cliente 4', logo: Cliente4Logo },
+  { name: 'Cliente 5', logo: Cliente5Logo },
+  { name: 'Cliente 6', logo: Cliente6Logo },
 ];
 
 const logoHoverIn = (e) => {
