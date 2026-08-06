@@ -1,4 +1,4 @@
-import { Laptop, ShoppingCart, MousePointerClick, Smartphone, PieChart, Bot, CheckCircle2 } from 'lucide-react';
+import { Laptop, ShoppingCart, MousePointerClick, Smartphone, PieChart, Bot, CheckCircle2, Wrench, RefreshCw } from 'lucide-react';
 import './Services.css';
 
 export default function ServicesList() {
@@ -67,6 +67,28 @@ export default function ServicesList() {
         'Respuestas automáticas 24/7',
         'Asistentes inteligentes (IA)',
         'Tareas repetitivas en piloto automático'
+      ]
+    },
+    {
+      id: 'support-maintenance',
+      title: 'Soporte y Mantenimiento',
+      description: 'Nos encargamos de que tu página web o sistema nunca falle. Realizamos copias de seguridad, actualizaciones de seguridad y solucionamos cualquier error.',
+      icon: <Wrench size={28} />,
+      features: [
+        'Copias de seguridad automáticas',
+        'Resolución de errores técnicos',
+        'Soporte técnico continuo'
+      ]
+    },
+    {
+      id: 'updates-audits',
+      title: 'Actualizaciones y Mejoras',
+      description: 'Si tu web está lenta o se ve antigua, la renovamos con tecnología moderna para que cargue súper rápido, sea segura y atraiga más clientes.',
+      icon: <RefreshCw size={28} />,
+      features: [
+        'Mejora de velocidad de carga',
+        'Actualización de diseño visual',
+        'Refuerzo de seguridad web'
       ]
     }
   ];
