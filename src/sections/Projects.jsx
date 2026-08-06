@@ -8,13 +8,13 @@ import ubixVD from '../assets/video/UbixVD.mp4';
 
 const projects = [
   { name: 'PyraChat CRM', company: 'Pyramid', year: '2024', desc: 'CRM omnicanal self-hosted.\nReemplazó respond.io.\nIntegra WhatsApp + Meta.', stack: 'NestJS · React · Supabase\nBullMQ · Socket.io · IA', link: 'crm.pyramid.edu.pe', video: crmVD },
-  { name: 'ConTalento', company: 'Empleabilidad PA', year: '2024', desc: 'Plataforma de conexión talento-empresa. Matching automatizado.', stack: 'Next.js · Node · PostgreSQL', link: '', video: contalentoVD },
+  { name: 'ConTalento', company: 'Empleabilidad PA', year: '2024', desc: 'Plataforma de conexión talento-empresa. Matching automatizado.', stack: 'Next.js · Node · PostgreSQL', link: 'contalento.pe', video: contalentoVD },
   // { name: 'PyramidCert', company: 'Pyramid', year: '2023', desc: 'Emisión y validación de certificados inmutables.', stack: 'React · Express · Web3', link: '', video: 'https://www.w3schools.com/html/mov_bbb.mp4' },
   { name: 'PIA Asistente IA', company: 'Pyramid', year: '2024', desc: 'Agente conversacional avanzado para soporte académico.', stack: 'Python · OpenAI · Redis', link: '', video: 'https://www.w3schools.com/html/mov_bbb.mp4' },
-  { name: 'COLAB Task Manager', company: 'Pyramid', year: '2025', desc: 'Gestor de tareas colaborativo en tiempo real.', stack: 'Vue · NestJS · WebSockets', link: '', video: colabVD },
-  { name: 'PyraCheck Asistencia', company: 'Pyramid', year: '2024', desc: 'Control de asistencia con geocerca y validación biométrica.', stack: 'Flutter · Firebase · GCP', link: '', video: 'https://www.w3schools.com/html/mov_bbb.mp4' },
+  { name: 'COLAB Task Manager', company: 'Pyramid', year: '2025', desc: 'Gestor de tareas colaborativo en tiempo real.', stack: 'Vue · NestJS · WebSockets', link: 'colab.vertexdev.tech', video: colabVD },
+  { name: 'Ubix', company: 'Vertex', year: '2024', desc: 'Micro SaaS para que las empresas controlen su asistencia con geocerca y validación biométrica.', stack: 'Flutter · Firebase · GCP', link: 'ubix.vertexdev.tech', video: ubixVD },
   { name: 'Pyramid Academy LMS', company: 'Pyramid', year: '2017+', desc: 'Plataforma educativa core. Más de 9k alumnos activos.', stack: 'MERN Stack · AWS', link: '', video: 'https://www.w3schools.com/html/mov_bbb.mp4' },
-  { name: 'GeoMod SaaS', company: 'Vertex', year: '2025', desc: 'Modelamiento geoespacial de alta precisión como servicio.', stack: 'React · Python · PostGIS', link: '', video: ubixVD }
+  { name: 'GeoMod SaaS', company: 'Vertex', year: '2025', desc: 'Modelamiento geoespacial de alta precisión como servicio.', stack: 'React · Python · PostGIS', link: '', video: 'https://www.w3schools.com/html/mov_bbb.mp4' }
 ];
 
 export default function Projects() {
