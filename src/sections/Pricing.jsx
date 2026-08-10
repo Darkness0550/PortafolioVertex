@@ -1,9 +1,7 @@
 import { Check, ArrowRight, Rocket, TrendingUp, Shield, Box } from 'lucide-react';
 import './Pricing.css';
 
-const WHATSAPP_NUMBER = '51987970396';
-const WHATSAPP_MSG = encodeURIComponent('Hola Vertex, me gustaría cotizar un sistema con ustedes');
-const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=${WHATSAPP_MSG}`;
+const COTIZADOR_URL = 'https://cotizador.vertexdev.tech/precotizador';
 
 const plans = [
   {
@@ -168,7 +166,7 @@ export default function Pricing() {
 
               {/* CTA Button */}
               <a
-                href={WHATSAPP_URL}
+                href={COTIZADOR_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 className={`pricing-cta font-display interactive${plan.custom ? ' pricing-cta--solid' : ''}`}
