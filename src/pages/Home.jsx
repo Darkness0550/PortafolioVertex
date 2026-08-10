@@ -4,7 +4,7 @@ import Projects from '../sections/Projects';
 import Process from '../sections/Process';
 import Statement from '../sections/Statement';
 import TechStack from '../sections/TechStack';
-import Diagnostic from '../sections/Diagnostic';
+import Pricing from '../sections/Pricing';
 import LandingAd from '../sections/LandingAd';
 import Testimonial from '../sections/Testimonial';
 import CTA from '../sections/CTA';
@@ -18,7 +18,7 @@ export default function Home() {
       <Process />
       <Statement />
       <TechStack />
-      <Diagnostic />
+      <Pricing />
       <LandingAd />
       <Testimonial />
       <CTA />
