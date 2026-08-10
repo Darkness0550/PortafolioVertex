@@ -1,4 +1,4 @@
-import { Check, ArrowRight, Rocket, TrendingUp, Shield, Box } from 'lucide-react';
+import { Check, ArrowRight, Rocket, TrendingUp, Shield, Box, ShieldCheck, Clock, Headphones, Handshake, Zap } from 'lucide-react';
 import './Pricing.css';
 
 const COTIZADOR_URL = 'https://cotizador.vertexdev.tech/precotizador';
@@ -89,10 +89,10 @@ const plans = [
 ];
 
 const badges = [
-  { icon: '🛡️', text: 'Diseño 100% personalizado' },
-  { icon: '⏱️', text: 'Entrega puntual y eficiente' },
-  { icon: '🎧', text: 'Soporte y capacitación incluidos' },
-  { icon: '🤝', text: 'Acompañamiento constante' },
+  { icon: <ShieldCheck size={20} />, text: 'Diseño 100% personalizado' },
+  { icon: <Clock size={20} />, text: 'Entrega puntual y eficiente' },
+  { icon: <Headphones size={20} />, text: 'Soporte y capacitación incluidos' },
+  { icon: <Handshake size={20} />, text: 'Acompañamiento constante' },
 ];
 
 export default function Pricing() {
@@ -119,7 +119,9 @@ export default function Pricing() {
               className={`pricing-card interactive${plan.highlight ? ' pricing-card--highlight' : ''}${plan.custom ? ' pricing-card--custom' : ''}`}
             >
               {plan.highlight && (
-                <div className="pricing-badge font-code">⚡ Más popular</div>
+                <div className="pricing-badge font-code" style={{ display: 'inline-flex', alignItems: 'center', gap: '4px' }}>
+                  <Zap size={12} /> Más popular
+                </div>
               )}
 
               {/* Icon */}

@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
+import { Building2, Triangle } from 'lucide-react';
 import './Landings.css';
 
 const landings = [
@@ -21,7 +22,7 @@ const landings = [
     tagline: 'Presencia. Confianza. Autoridad.',
     desc: 'Web profesional corporativa para una empresa especializada en ingeniería, construcción y mantenimiento para los sectores minero e industrial.',
     color: '#FF6B35',
-    emoji: '🏗️',
+    icon: <Building2 size={32} />,
     badge: 'CORPORATIVO',
     link: 'https://losandes.ing/',
     video: 'https://www.w3schools.com/html/mov_bbb.mp4',
@@ -32,7 +33,7 @@ const landings = [
     tagline: 'Ingeniería. Precisión. Escala.',
     desc: 'Web profesional corporativa para la presentación de servicios de ingeniería estructural, arquitectura y metodología BIM.',
     color: '#A259FF',
-    emoji: '🔺',
+    icon: <Triangle size={32} />,
     badge: 'CORPORATIVO',
     link: 'https://pyramid.com.pe/',
     video: 'https://www.w3schools.com/html/mov_bbb.mp4',
@@ -146,7 +147,7 @@ function LandingCard({ item, index }) {
           >
             {item.badge}
           </span>
-          <span className="lc-emoji">{item.emoji}</span>
+          <span className="lc-emoji">{item.icon}</span>
         </div>
 
         {/* body */}
