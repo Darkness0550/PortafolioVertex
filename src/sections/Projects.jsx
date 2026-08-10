@@ -7,12 +7,12 @@ import contalentoVD from '../assets/video/ConTalentoVD.mp4';
 import ubixVD from '../assets/video/UbixVD.mp4';
 
 const projects = [
-  { name: 'PyraChat CRM', company: 'Pyramid', year: '2024', desc: 'CRM omnicanal self-hosted.\nReemplazó respond.io.\nIntegra WhatsApp + Meta.', stack: 'NestJS · React · Supabase\nBullMQ · Socket.io · IA', link: 'crm.pyramid.edu.pe', video: crmVD },
+  { name: 'PyraChat CRM', company: 'Pyramid', year: '2026', desc: 'CRM omnicanal self-hosted.\nReemplazó respond.io.\nIntegra WhatsApp + Meta.', stack: 'NestJS · React · Supabase\nBullMQ · Socket.io · IA', link: 'crm.pyramid.edu.pe', video: crmVD },
   { name: 'ConTalento', company: 'Empleabilidad PA', year: '2024', desc: 'Plataforma de conexión talento-empresa. Matching automatizado.', stack: 'Next.js · Node · PostgreSQL', link: 'contalento.pe', video: contalentoVD },
   // { name: 'PyramidCert', company: 'Pyramid', year: '2023', desc: 'Emisión y validación de certificados inmutables.', stack: 'React · Express · Web3', link: '', video: 'https://www.w3schools.com/html/mov_bbb.mp4' },
-  { name: 'PIA Asistente IA', company: 'Pyramid', year: '2024', desc: 'Agente conversacional avanzado para soporte académico.', stack: 'Python · OpenAI · Redis', link: '', video: 'https://www.w3schools.com/html/mov_bbb.mp4' },
-  { name: 'COLAB Task Manager', company: 'Pyramid', year: '2025', desc: 'Gestor de tareas colaborativo en tiempo real.', stack: 'Vue · NestJS · WebSockets', link: 'colab.vertexdev.tech', video: colabVD },
-  { name: 'Ubix', company: 'Vertex', year: '2024', desc: 'Micro SaaS para que las empresas controlen su asistencia con geocerca y validación biométrica.', stack: 'Flutter · Firebase · GCP', link: 'ubix.vertexdev.tech', video: ubixVD },
+  { name: 'PIA Asistente IA', company: 'Pyramid', year: '2025', desc: 'Agente conversacional avanzado para soporte académico.', stack: 'Python · OpenAI · Redis', link: '', video: 'https://www.w3schools.com/html/mov_bbb.mp4' },
+  { name: 'COLAB Task Manager', company: 'Pyramid', year: '2026', desc: 'Gestor de tareas colaborativo en tiempo real.', stack: 'Vue · NestJS · WebSockets', link: 'colab.vertexdev.tech', video: colabVD },
+  { name: 'Ubix', company: 'Vertex', year: '2025', desc: 'Micro SaaS para que las empresas controlen su asistencia con geocerca y validación biométrica.', stack: 'Flutter · Firebase · GCP', link: 'ubix.vertexdev.tech', video: ubixVD },
   { name: 'Pyramid Academy LMS', company: 'Pyramid', year: '2017+', desc: 'Plataforma educativa core. Más de 9k alumnos activos.', stack: 'MERN Stack · AWS', link: '', video: 'https://www.w3schools.com/html/mov_bbb.mp4' },
   { name: 'GeoMod SaaS', company: 'Vertex', year: '2025', desc: 'Modelamiento geoespacial de alta precisión como servicio.', stack: 'React · Python · PostGIS', link: '', video: 'https://www.w3schools.com/html/mov_bbb.mp4' }
 ];
@@ -34,22 +34,22 @@ export default function Projects() {
       <div className="projects-bg"></div>
       <div className="container" style={{ position: 'relative', zIndex: 10, padding: '120px 24px' }}>
         <h2 className="font-display text-primary" style={{ fontSize: '46px', marginBottom: '64px' }}>Proyectos en Producción</h2>
-        
+
         <div className={`projects-grid ${!isStandalone ? 'projects-grid-home' : ''}`}>
           {projects.slice(0, isStandalone ? projects.length : 3).map((p, i) => (
-            <div 
-              key={i} 
+            <div
+              key={i}
               className={`project-card-wrapper ${flippedId === i ? 'flipped' : ''}`}
             >
               <div className="project-card-inner">
                 {/* FRONT OF CARD */}
-                <div 
+                <div
                   className={`project-card interactive front-face ${isStandalone ? 'clickable' : ''}`}
                   onClick={(e) => handleFlip(i, e)}
                   onMouseEnter={(e) => {
                     if (flippedId === i) return;
                     const video = e.currentTarget.querySelector('video');
-                    if (video) video.play().catch(() => {});
+                    if (video) video.play().catch(() => { });
                   }}
                   onMouseLeave={(e) => {
                     const video = e.currentTarget.querySelector('video');
@@ -63,7 +63,7 @@ export default function Projects() {
                       <div className="demo-hint font-code">VER DEMO ↻</div>
                     )}
                   </div>
-                  
+
                   <div className="project-card-content">
                     <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '16px' }}>
                       <div className="font-code text-accent" style={{ fontSize: '13px', display: 'flex', alignItems: 'center', gap: '6px' }}>
@@ -71,13 +71,13 @@ export default function Projects() {
                       </div>
                       <div className="font-code text-secondary" style={{ fontSize: '13px' }}>[{p.year}]</div>
                     </div>
-                    
+
                     <h3 className="font-display text-primary" style={{ fontSize: '21px', marginBottom: '12px' }}>{p.name}</h3>
-                    
+
                     <p className="font-body text-secondary" style={{ fontSize: '15px', lineHeight: '1.5', marginBottom: '24px', flexGrow: 1, whiteSpace: 'pre-line' }}>
                       {p.desc}
                     </p>
-                    
+
                     <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', marginBottom: '16px' }}>
                       {p.stack.split(/·|\n/).map((tech, idx) => {
                         const t = tech.trim();
@@ -96,7 +96,7 @@ export default function Projects() {
                         );
                       })}
                     </div>
-                    
+
                     {p.link && (
                       <div className="font-code text-secondary" style={{ fontSize: '13px' }}>
                         <a href={`https://${p.link}`} target="_blank" rel="noreferrer" style={{ color: 'inherit', textDecoration: 'none' }}>[{p.link} ↗]</a>
@@ -109,7 +109,7 @@ export default function Projects() {
                 {isStandalone && (
                   <div className="project-card back-face">
                     <div style={{ width: '100%', height: '100%', position: 'relative', backgroundColor: '#000', borderRadius: '12px', overflow: 'hidden' }}>
-                      <button 
+                      <button
                         onClick={(e) => { e.stopPropagation(); setFlippedId(null); }}
                         className="font-code"
                         style={{
@@ -128,12 +128,12 @@ export default function Projects() {
                       >
                         VOLVER ✕
                       </button>
-                      <video 
-                        src={p.video} 
-                        autoPlay={flippedId === i} 
+                      <video
+                        src={p.video}
+                        autoPlay={flippedId === i}
                         muted={false}
-                        controls 
-                        className="project-video-full" 
+                        controls
+                        className="project-video-full"
                         style={{ width: '100%', height: '100%', objectFit: 'contain' }}
                       />
                     </div>
@@ -146,15 +146,15 @@ export default function Projects() {
 
         {!isStandalone && (
           <div style={{ marginTop: '64px', display: 'flex', justifyContent: 'center' }}>
-            <Link to="/proyectos" className="interactive panel" style={{ 
-              padding: '16px 32px', 
-              border: '1px solid var(--vertex-accent)', 
-              borderRadius: '8px', 
-              textDecoration: 'none', 
+            <Link to="/proyectos" className="interactive panel" style={{
+              padding: '16px 32px',
+              border: '1px solid var(--vertex-accent)',
+              borderRadius: '8px',
+              textDecoration: 'none',
               color: 'var(--vertex-accent)',
               fontFamily: 'var(--font-code)',
               fontSize: '14px',
-              transition: 'all 0.3s' 
+              transition: 'all 0.3s'
             }}>
               [ Ver todos los proyectos → ]
             </Link>
