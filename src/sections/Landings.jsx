@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import './Landings.css';
 
 const landings = [
+  /*
   {
     id: 'apex',
     name: 'Apex',
@@ -9,15 +10,16 @@ const landings = [
     desc: 'Landing page diseñada para convertir visitantes en clientes desde el primer segundo.',
     color: '#00C8FF',
     emoji: '⚡',
-    badge: 'E-COMMERCE',
+    badge: 'CORPORATIVO',
     link: null,
     video: 'https://www.w3schools.com/html/mov_bbb.mp4',
   },
+  */
   {
     id: 'consorcio',
     name: 'Consorcio Los Andes',
     tagline: 'Presencia. Confianza. Autoridad.',
-    desc: 'Identidad digital corporativa que transmite seriedad y profesionalismo en construcción.',
+    desc: 'Web profesional corporativa para una empresa especializada en ingeniería, construcción y mantenimiento para los sectores minero e industrial.',
     color: '#FF6B35',
     emoji: '🏗️',
     badge: 'CORPORATIVO',
@@ -28,10 +30,10 @@ const landings = [
     id: 'pyramid',
     name: 'Pyramid Structures',
     tagline: 'Ingeniería. Precisión. Escala.',
-    desc: 'Web industrial de alta gama que posiciona a la empresa en la cima del mercado.',
+    desc: 'Web profesional corporativa para la presentación de servicios de ingeniería estructural, arquitectura y metodología BIM.',
     color: '#A259FF',
     emoji: '🔺',
-    badge: 'INDUSTRIA',
+    badge: 'CORPORATIVO',
     link: 'https://pyramid.com.pe/',
     video: 'https://www.w3schools.com/html/mov_bbb.mp4',
   },
@@ -241,17 +243,17 @@ export default function Landings() {
           </p>
 
           <div className="lh-actions">
-            <a href="#contacto" className="lh-btn-primary">
+            <a href="https://cotizador.vertexdev.tech/precotizador" target="_blank" rel="noopener noreferrer" className="lh-btn-primary">
               MEJORAR MI PÁGINA
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
                 <path d="M7 17L17 7M7 7h10v10" />
               </svg>
             </a>
-            <a href="#contacto" className="lh-btn-ghost">VER PROCESO →</a>
+            <a href="#proceso" className="lh-btn-ghost">VER PROCESO →</a>
           </div>
 
           <div className="lh-stats">
-            {[['3+', 'Landings entregadas'], ['100%', 'Satisfacción'], ['48h', 'Entrega rápida']].map(([val, lbl]) => (
+            {[['15+', 'Proyectos web'], ['100%', 'Satisfacción'], ['100%', 'A medida']].map(([val, lbl]) => (
               <div className="lh-stat" key={lbl}>
                 <span className="lh-stat-num">{val}</span>
                 <span className="lh-stat-lbl">{lbl}</span>
@@ -312,7 +314,7 @@ export default function Landings() {
               Diseñada para <em>vender.</em>
             </h3>
           </div>
-          <a href="#contacto" className="lh-btn-primary">
+          <a href="https://cotizador.vertexdev.tech/precotizador" target="_blank" rel="noopener noreferrer" className="lh-btn-primary">
             SOLICITAR LANDING
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
               <path d="M7 17L17 7M7 7h10v10" />
