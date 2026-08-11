@@ -1,6 +1,8 @@
 import { useEffect, useRef, useState } from 'react';
 import { Building2, Triangle } from 'lucide-react';
 import './Landings.css';
+import losAndesVD from '../assets/video/LOSANDESVD.mp4';
+import pyramidStructuresVD from '../assets/video/PYRAMIDSTRUCTURESVD.mp4';
 
 const landings = [
   /*
@@ -25,7 +27,7 @@ const landings = [
     icon: <Building2 size={32} />,
     badge: 'CORPORATIVO',
     link: 'https://losandes.ing/',
-    video: 'https://www.w3schools.com/html/mov_bbb.mp4',
+    video: losAndesVD,
   },
   {
     id: 'pyramid',
@@ -36,7 +38,7 @@ const landings = [
     icon: <Triangle size={32} />,
     badge: 'CORPORATIVO',
     link: 'https://pyramid.com.pe/',
-    video: 'https://www.w3schools.com/html/mov_bbb.mp4',
+    video: pyramidStructuresVD,
   },
 ];
 
