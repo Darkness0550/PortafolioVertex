@@ -19,7 +19,7 @@ const projects = [
   { name: 'Ubix', company: 'Vertex', year: '2025', desc: 'Sistema moderno para el control de asistencia de personal, utilizando ubicación por GPS y reconocimiento facial para mayor seguridad y precisión.', stack: 'Flutter · Firebase · GCP', link: 'ubix.vertexdev.tech', video: ubixVD },
   { name: 'Pyramid Academy LMS', company: 'Pyramid', year: '2017+', desc: 'Plataforma educativa virtual donde miles de estudiantes pueden acceder a cursos, evaluaciones y recursos de aprendizaje de forma sencilla e intuitiva.', stack: 'MERN Stack · AWS', link: '', video: pyramidAcademyVD },
   { name: 'Pyramid Structures', company: 'Pyramid', year: '2024', desc: 'Web corporativa moderna para empresa de estructuras, mostrando servicios de ingeniería y construcción de manera profesional.', stack: 'React · Node · CSS', link: '', video: pyramidStructuresVD },
-  { name: 'De Los Andes', company: 'Educación', year: '2024', desc: 'Plataforma web institucional para colegio, integrando información académica y comunicación efectiva con la comunidad estudiantil.', stack: 'React · Node · MySQL', link: '', video: losAndesVD },
+  { name: 'De Los Andes', company: 'Minería y Construcción', year: '2024', desc: 'Plataforma corporativa para empresa del sector minero y construcción, destacando sus proyectos, servicios y consultorías especializadas.', stack: 'React · Node · MySQL', link: '', video: losAndesVD },
   // { name: 'GeoMod SaaS', company: 'Vertex', year: '2025', desc: 'Plataforma especializada que permite procesar y visualizar mapas y datos geográficos complejos de manera accesible para cualquier usuario.', stack: 'React · Python · PostGIS', link: '', video: 'https://www.w3schools.com/html/mov_bbb.mp4' }
 ];
 
