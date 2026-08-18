@@ -1,7 +1,7 @@
 import { Check, ArrowRight, Rocket, TrendingUp, Shield, Box, ShieldCheck, Clock, Headphones, Handshake, Zap } from 'lucide-react';
 import './Pricing.css';
 
-const COTIZADOR_URL = 'https://cotizador.vertexdev.tech/precotizador';
+const COTIZADOR_URL = 'https://precotiza.vertexdev.tech/#/catalog/vertex-developers';
 
 const plans = [
   {

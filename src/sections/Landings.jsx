@@ -246,7 +246,7 @@ export default function Landings() {
           </p>
 
           <div className="lh-actions">
-            <a href="https://cotizador.vertexdev.tech/precotizador" target="_blank" rel="noopener noreferrer" className="lh-btn-primary">
+            <a href="https://precotiza.vertexdev.tech/#/catalog/vertex-developers" target="_blank" rel="noopener noreferrer" className="lh-btn-primary">
               MEJORAR MI PÁGINA
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
                 <path d="M7 17L17 7M7 7h10v10" />
@@ -317,7 +317,7 @@ export default function Landings() {
               Diseñada para <em>vender.</em>
             </h3>
           </div>
-          <a href="https://cotizador.vertexdev.tech/precotizador" target="_blank" rel="noopener noreferrer" className="lh-btn-primary">
+          <a href="https://precotiza.vertexdev.tech/#/catalog/vertex-developers" target="_blank" rel="noopener noreferrer" className="lh-btn-primary">
             SOLICITAR LANDING
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
               <path d="M7 17L17 7M7 7h10v10" />

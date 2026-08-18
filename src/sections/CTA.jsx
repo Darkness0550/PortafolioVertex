@@ -18,7 +18,7 @@ export default function CTA() {
 
           <div style={{ position: 'relative' }}>
             <a 
-              href="https://cotizador.vertexdev.tech/precotizador"
+              href="https://precotiza.vertexdev.tech/#/catalog/vertex-developers"
               target="_blank"
               rel="noopener noreferrer"
               className="interactive font-display" 
