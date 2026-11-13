@@ -40,22 +40,23 @@ export default function Navbar() {
       backdropFilter: scrolled ? 'blur(8px)' : 'none',
       borderBottom: scrolled ? '1px solid var(--border-glow)' : 'none',
     }}>
-      <button 
-        className="navbar-logo interactive" 
+      <button
+        className="navbar-logo interactive"
         onClick={handleLogoClick}
         style={{ display: 'flex', alignItems: 'center', gap: '8px', background: 'none', border: 'none', cursor: 'pointer', padding: 0 }}
       >
         <img src={VertexLogo} alt="Vertex Logo" style={{ height: '32px' }} />
       </button>
-      
+
       <div className="nav-links" style={{ display: 'flex', gap: '36px', alignItems: 'center' }}>
         <div className="nav-desktop-links" style={{ display: 'flex', gap: '32px' }}>
-          <Link to="/proyectos" className="font-body interactive text-secondary" style={{ fontSize: '18px', transition: 'color 0.2s', textDecoration: 'none' }} onMouseEnter={e => e.target.style.color='var(--text-primary)'} onMouseLeave={e => e.target.style.color='var(--text-secondary)'}>Proyectos</Link>
-          <Link to="/landings" className="font-body interactive text-secondary" style={{ fontSize: '18px', transition: 'color 0.2s', textDecoration: 'none' }} onMouseEnter={e => e.target.style.color='var(--text-primary)'} onMouseLeave={e => e.target.style.color='var(--text-secondary)'}>Landings</Link>
-          <Link to="/servicios" className="font-body interactive text-secondary" style={{ fontSize: '18px', transition: 'color 0.2s', textDecoration: 'none' }} onMouseEnter={e => e.target.style.color='var(--text-primary)'} onMouseLeave={e => e.target.style.color='var(--text-secondary)'}>Servicios</Link>
-          <Link to="/stack" className="font-body interactive text-secondary" style={{ fontSize: '18px', transition: 'color 0.2s', textDecoration: 'none' }} onMouseEnter={e => e.target.style.color='var(--text-primary)'} onMouseLeave={e => e.target.style.color='var(--text-secondary)'}>Stack</Link>
-          <Link to="/clientes" className="font-body interactive text-secondary" style={{ fontSize: '18px', transition: 'color 0.2s', textDecoration: 'none' }} onMouseEnter={e => e.target.style.color='var(--text-primary)'} onMouseLeave={e => e.target.style.color='var(--text-secondary)'}>Clientes</Link>
-          <Link to="/contacto" className="font-body interactive text-secondary" style={{ fontSize: '18px', transition: 'color 0.2s', textDecoration: 'none' }} onMouseEnter={e => e.target.style.color='var(--text-primary)'} onMouseLeave={e => e.target.style.color='var(--text-secondary)'}>Contacto</Link>
+          <Link to="/proyectos" className="font-body interactive text-secondary" style={{ fontSize: '18px', transition: 'color 0.2s', textDecoration: 'none' }} onMouseEnter={e => e.target.style.color = 'var(--text-primary)'} onMouseLeave={e => e.target.style.color = 'var(--text-secondary)'}>Proyectos</Link>
+          <Link to="/apps" className="font-body interactive text-secondary" style={{ fontSize: '18px', transition: 'color 0.2s', textDecoration: 'none' }} onMouseEnter={e => e.target.style.color = 'var(--text-primary)'} onMouseLeave={e => e.target.style.color = 'var(--text-secondary)'}>Apps</Link>
+          <Link to="/landings" className="font-body interactive text-secondary" style={{ fontSize: '18px', transition: 'color 0.2s', textDecoration: 'none' }} onMouseEnter={e => e.target.style.color = 'var(--text-primary)'} onMouseLeave={e => e.target.style.color = 'var(--text-secondary)'}>Landings</Link>
+          <Link to="/servicios" className="font-body interactive text-secondary" style={{ fontSize: '18px', transition: 'color 0.2s', textDecoration: 'none' }} onMouseEnter={e => e.target.style.color = 'var(--text-primary)'} onMouseLeave={e => e.target.style.color = 'var(--text-secondary)'}>Servicios</Link>
+          <Link to="/stack" className="font-body interactive text-secondary" style={{ fontSize: '18px', transition: 'color 0.2s', textDecoration: 'none' }} onMouseEnter={e => e.target.style.color = 'var(--text-primary)'} onMouseLeave={e => e.target.style.color = 'var(--text-secondary)'}>Stack</Link>
+          <Link to="/clientes" className="font-body interactive text-secondary" style={{ fontSize: '18px', transition: 'color 0.2s', textDecoration: 'none' }} onMouseEnter={e => e.target.style.color = 'var(--text-primary)'} onMouseLeave={e => e.target.style.color = 'var(--text-secondary)'}>Clientes</Link>
+          <Link to="/contacto" className="font-body interactive text-secondary" style={{ fontSize: '18px', transition: 'color 0.2s', textDecoration: 'none' }} onMouseEnter={e => e.target.style.color = 'var(--text-primary)'} onMouseLeave={e => e.target.style.color = 'var(--text-secondary)'}>Contacto</Link>
         </div>
         <Link to="/contacto" className="cta font-display interactive" style={{
           border: '1px solid var(--vertex-accent)',
@@ -67,8 +68,8 @@ export default function Navbar() {
           whiteSpace: 'nowrap',
           textDecoration: 'none'
         }}
-        onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = 'var(--vertex-accent)'; e.currentTarget.style.color = 'var(--abyss)'; }}
-        onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = 'transparent'; e.currentTarget.style.color = 'var(--vertex-accent)'; }}
+          onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = 'var(--vertex-accent)'; e.currentTarget.style.color = 'var(--abyss)'; }}
+          onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = 'transparent'; e.currentTarget.style.color = 'var(--vertex-accent)'; }}
         >
           INICIAR PROYECTO
         </Link>

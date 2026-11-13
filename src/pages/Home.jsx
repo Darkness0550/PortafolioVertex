@@ -8,6 +8,7 @@ import Pricing from '../sections/Pricing';
 import LandingAd from '../sections/LandingAd';
 import Testimonial from '../sections/Testimonial';
 import CTA from '../sections/CTA';
+import Apps from '../sections/Apps';
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
       <Hero />
       <Credentials />
       <Projects />
+      <Apps />
       <Process />
       <Statement />
       <TechStack />

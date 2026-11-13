@@ -5,7 +5,7 @@ export default function CTA() {
   return (
     <section id="contacto" className="section-reveal cta-section" style={{ minHeight: '100vh', position: 'relative', display: 'flex', alignItems: 'center' }}>
       <div className="container" style={{ position: 'relative', zIndex: 2, display: 'flex', flexWrap: 'wrap', width: '100%' }}>
-        
+
         <div className="cta-form-col" style={{ flex: '1 1 50%', minWidth: '300px', paddingRight: '5%' }}>
           <h2 className="font-display text-primary cta-title" style={{ fontSize: 'clamp(46px, 6vw, 83px)', lineHeight: '1.1', marginBottom: '24px' }}>
             Construyamos<br />
@@ -16,12 +16,12 @@ export default function CTA() {
             ¿Estás listo para dar el siguiente paso? Realiza una pre-cotización y cuéntanos sobre esa idea que cambiará las reglas del juego. Nos encargamos del resto.
           </p>
 
-          <div style={{ position: 'relative' }}>
-            <a 
+          <div style={{ position: 'relative', display: 'flex', gap: '16px', flexWrap: 'wrap', alignItems: 'center' }}>
+            <a
               href="https://precotiza.vertexdev.tech/#/catalog/vertex-developers"
               target="_blank"
               rel="noopener noreferrer"
-              className="interactive font-display" 
+              className="interactive font-display"
               style={{
                 border: '1px solid var(--vertex-accent)',
                 padding: '18px 36px',
@@ -36,18 +36,51 @@ export default function CTA() {
                 textDecoration: 'none',
                 textTransform: 'uppercase'
               }}
-              onMouseEnter={(e) => { 
-                e.currentTarget.style.backgroundColor = 'var(--vertex-accent)'; 
-                e.currentTarget.style.color = 'var(--abyss)'; 
+              onMouseEnter={(e) => {
+                e.currentTarget.style.backgroundColor = 'var(--vertex-accent)';
+                e.currentTarget.style.color = 'var(--abyss)';
                 e.currentTarget.style.boxShadow = '0 0 30px rgba(0, 240, 255, 0.4)';
               }}
-              onMouseLeave={(e) => { 
-                e.currentTarget.style.backgroundColor = 'transparent'; 
-                e.currentTarget.style.color = 'var(--vertex-accent)'; 
+              onMouseLeave={(e) => {
+                e.currentTarget.style.backgroundColor = 'transparent';
+                e.currentTarget.style.color = 'var(--vertex-accent)';
                 e.currentTarget.style.boxShadow = 'none';
               }}
             >
               COTIZA CON NOSOTROS <span style={{ transition: 'transform 0.3s' }} onMouseEnter={(e) => e.currentTarget.style.transform = 'translateX(4px)'} onMouseLeave={(e) => e.currentTarget.style.transform = 'translateX(0)'}>▶</span>
+            </a>
+
+            <a
+              href="https://wa.me/51987970396?text=Hola%20Vertex%2C%20quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20sus%20servicios%20y%20proyectos."
+              target="_blank"
+              rel="noopener noreferrer"
+              className="interactive font-display"
+              style={{
+                border: '1px solid var(--vertex-accent)',
+                padding: '18px 36px',
+                color: 'var(--vertex-accent)',
+                fontSize: '18px',
+                letterSpacing: '1.5px',
+                background: 'transparent',
+                transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '12px',
+                textDecoration: 'none',
+                textTransform: 'uppercase'
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.backgroundColor = 'var(--vertex-accent)';
+                e.currentTarget.style.color = 'var(--abyss)';
+                e.currentTarget.style.boxShadow = '0 0 30px rgba(0, 240, 255, 0.4)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.backgroundColor = 'transparent';
+                e.currentTarget.style.color = 'var(--vertex-accent)';
+                e.currentTarget.style.boxShadow = 'none';
+              }}
+            >
+              CONTÁCTANOS AHORA <span style={{ transition: 'transform 0.3s' }} onMouseEnter={(e) => e.currentTarget.style.transform = 'translateX(4px)'} onMouseLeave={(e) => e.currentTarget.style.transform = 'translateX(0)'}>▶</span>
             </a>
           </div>
         </div>

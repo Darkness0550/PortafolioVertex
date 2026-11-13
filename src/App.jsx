@@ -7,6 +7,7 @@ import LandingsPage from './pages/LandingsPage';
 import StackPage from './pages/StackPage';
 import ClientsPage from './pages/ClientsPage';
 import ContactPage from './pages/ContactPage';
+import AppsPage from './pages/AppsPage';
 import ServicesPage from './pages/ServicesPage';
 import { playStartupSound } from './utils/SoundFX';
 
@@ -36,6 +37,7 @@ function App() {
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
           <Route path="proyectos" element={<ProjectsPage />} />
+          <Route path="apps" element={<AppsPage />} />
           <Route path="landings" element={<LandingsPage />} />
           <Route path="servicios" element={<ServicesPage />} />
           <Route path="stack" element={<StackPage />} />

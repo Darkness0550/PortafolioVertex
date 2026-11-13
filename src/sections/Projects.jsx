@@ -15,11 +15,14 @@ const projects = [
   { name: 'ConTalento', company: 'Empleabilidad PA', year: '2024', desc: 'Plataforma inteligente que conecta a empresas con los mejores candidatos, automatizando el proceso de selección y facilitando la búsqueda del empleo ideal.', stack: 'Next.js · Node · PostgreSQL', link: 'contalento.pe', video: contalentoVD },
   // { name: 'PyramidCert', company: 'Pyramid', year: '2023', desc: 'Emisión y validación de certificados inmutables.', stack: 'React · Express · Web3', link: '', video: 'https://www.w3schools.com/html/mov_bbb.mp4' },
   { name: 'PIA Asistente IA', company: 'Pyramid', year: '2025', desc: 'Asistente virtual inteligente disponible 24/7 que resuelve dudas, brinda soporte y guía a los usuarios de manera rápida y natural.', stack: 'Python · OpenAI · Redis', link: '', video: piaVD },
-  { name: 'COLAB Task Manager', company: 'Pyramid', year: '2026', desc: 'Herramienta de gestión de proyectos que permite a los equipos organizar sus tareas, comunicarse en vivo y mejorar su productividad diaria.', stack: 'Vue · NestJS · WebSockets', link: 'colab.vertexdev.tech', video: colabVD },
+  { name: 'COLLAB Task Manager', company: 'Pyramid', year: '2026', desc: 'Herramienta de gestión de proyectos que permite a los equipos organizar sus tareas, comunicarse en vivo y mejorar su productividad diaria.', stack: 'Vue · NestJS · WebSockets', link: 'collab.vertexdev.tech', video: colabVD },
   { name: 'Ubix', company: 'Vertex', year: '2025', desc: 'Sistema moderno para el control de asistencia de personal, utilizando ubicación por GPS y reconocimiento facial para mayor seguridad y precisión.', stack: 'Flutter · Firebase · GCP', link: 'ubix.vertexdev.tech', video: ubixVD },
-  { name: 'Pyramid Academy LMS', company: 'Pyramid', year: '2017+', desc: 'Plataforma educativa virtual donde miles de estudiantes pueden acceder a cursos, evaluaciones y recursos de aprendizaje de forma sencilla e intuitiva.', stack: 'MERN Stack · AWS', link: '', video: pyramidAcademyVD },
-  { name: 'Pyramid Structures', company: 'Pyramid', year: '2024', desc: 'Web corporativa moderna para empresa de estructuras, mostrando servicios de ingeniería y construcción de manera profesional.', stack: 'React · Node · CSS', link: '', video: pyramidStructuresVD },
-  { name: 'De Los Andes', company: 'Minería y Construcción', year: '2024', desc: 'Plataforma corporativa para empresa del sector minero y construcción, destacando sus proyectos, servicios y consultorías especializadas.', stack: 'React · Node · MySQL', link: '', video: losAndesVD },
+  { name: 'Pyramid Academy LMS', company: 'Pyramid', year: '2017+', desc: 'Plataforma educativa virtual donde miles de estudiantes pueden acceder a cursos, evaluaciones y recursos de aprendizaje de forma sencilla e intuitiva.', stack: 'MERN Stack · AWS', link: 'pyramid.edu.pe', video: pyramidAcademyVD },
+  { name: 'Pyramid Structures', company: 'Pyramid', year: '2024', desc: 'Web corporativa moderna para empresa de estructuras, mostrando servicios de ingeniería y construcción de manera profesional.', stack: 'React · Node · CSS', link: 'pyramid.com.pe', video: pyramidStructuresVD },
+  { name: 'De Los Andes', company: 'Minería y Construcción', year: '2024', desc: 'Plataforma corporativa para empresa del sector minero y construcción, destacando sus proyectos, servicios y consultorías especializadas.', stack: 'React · Node · MySQL', link: 'losandes.ing', video: losAndesVD },
+  { name: 'Inspect', company: 'Pyramid', year: '2026', desc: 'Plataforma digital para la inspección y evaluación de edificaciones que permite registrar patologías y daños estructurales, documentar evidencias fotográficas, gestionar inspecciones y generar reportes técnicos.', stack: 'React · Node · MySQL', link: 'inspect.vertexdev.tech' },
+  { name: 'SUMMA', company: 'Vertex', year: '2026', desc: 'Plataforma digital de cotización que permite a las empresas generar cotizaciones de productos y servicios de manera rápida, sencilla y automatizada, optimizando sus procesos comerciales.', stack: 'React · Tailwind CSS · Vite', link: '' },
+
   // { name: 'GeoMod SaaS', company: 'Vertex', year: '2025', desc: 'Plataforma especializada que permite procesar y visualizar mapas y datos geográficos complejos de manera accesible para cualquier usuario.', stack: 'React · Python · PostGIS', link: '', video: 'https://www.w3schools.com/html/mov_bbb.mp4' }
 ];
 
@@ -104,8 +107,45 @@ export default function Projects() {
                     </div>
 
                     {p.link && (
-                      <div className="font-code text-secondary" style={{ fontSize: '13px' }}>
-                        <a href={`https://${p.link}`} target="_blank" rel="noreferrer" style={{ color: 'inherit', textDecoration: 'none' }}>[{p.link} ↗]</a>
+                      <div style={{ marginTop: 'auto', paddingTop: '12px', display: 'flex', justifyContent: 'flex-start' }}>
+                        <a
+                          href={`https://${p.link}`}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="interactive"
+                          onClick={(e) => e.stopPropagation()}
+                          style={{
+                            display: 'inline-flex',
+                            alignItems: 'center',
+                            gap: '8px',
+                            padding: '8px 16px',
+                            borderRadius: '20px',
+                            border: '1px solid var(--border-glow)',
+                            backgroundColor: 'rgba(255, 255, 255, 0.03)',
+                            color: 'var(--text-primary)',
+                            textDecoration: 'none',
+                            fontFamily: 'var(--font-code)',
+                            fontSize: '12px',
+                            transition: 'all 0.25s ease'
+                          }}
+                          onMouseEnter={e => {
+                            e.currentTarget.style.borderColor = 'var(--vertex-accent)';
+                            e.currentTarget.style.backgroundColor = 'rgba(3, 151, 163, 0.12)';
+                            e.currentTarget.style.color = 'var(--vertex-accent)';
+                            e.currentTarget.style.transform = 'translateY(-1px)';
+                            e.currentTarget.style.boxShadow = '0 0 15px rgba(3, 151, 163, 0.25)';
+                          }}
+                          onMouseLeave={e => {
+                            e.currentTarget.style.borderColor = 'var(--border-glow)';
+                            e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.03)';
+                            e.currentTarget.style.color = 'var(--text-primary)';
+                            e.currentTarget.style.transform = 'none';
+                            e.currentTarget.style.boxShadow = 'none';
+                          }}
+                        >
+                          <span>Explorar {p.name}</span>
+                          <span style={{ color: 'var(--vertex-accent)', fontSize: '13px', transition: 'transform 0.2s ease' }}>↗</span>
+                        </a>
                       </div>
                     )}
                   </div>
